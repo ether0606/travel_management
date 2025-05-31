@@ -1,8 +1,6 @@
 
 <?php include_once('include/connection.php'); ?>
-<?php
-session_start();
-?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

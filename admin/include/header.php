@@ -1,6 +1,5 @@
 <?php include_once('connection.php'); ?>
 <?php
-session_start();
 if(!isset($_SESSION['log_user_status']) && $_SESSION['log_user_status']!==true){
     header('location:login.php');
 }
