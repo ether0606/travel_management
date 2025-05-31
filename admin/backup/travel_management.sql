@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 31, 2025 at 06:21 AM
+-- Generation Time: May 31, 2025 at 08:26 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -106,10 +106,10 @@ CREATE TABLE `destination` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hotel`
+-- Table structure for table `hotels`
 --
 
-CREATE TABLE `hotel` (
+CREATE TABLE `hotels` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `location_id` int(11) NOT NULL,
@@ -126,10 +126,10 @@ CREATE TABLE `hotel` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `hotel_booking`
+-- Table structure for table `hotel_bookings`
 --
 
-CREATE TABLE `hotel_booking` (
+CREATE TABLE `hotel_bookings` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `hotel_id` int(11) NOT NULL,
@@ -341,10 +341,10 @@ CREATE TABLE `ticket_detail` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tour_package`
+-- Table structure for table `tour_packages`
 --
 
-CREATE TABLE `tour_package` (
+CREATE TABLE `tour_packages` (
   `id` int(11) NOT NULL,
   `title` varchar(255) NOT NULL,
   `description` text NOT NULL,
@@ -449,15 +449,15 @@ ALTER TABLE `destination`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hotel`
+-- Indexes for table `hotels`
 --
-ALTER TABLE `hotel`
+ALTER TABLE `hotels`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `hotel_booking`
+-- Indexes for table `hotel_bookings`
 --
-ALTER TABLE `hotel_booking`
+ALTER TABLE `hotel_bookings`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -521,9 +521,9 @@ ALTER TABLE `ticket_detail`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tour_package`
+-- Indexes for table `tour_packages`
 --
-ALTER TABLE `tour_package`
+ALTER TABLE `tour_packages`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -573,15 +573,15 @@ ALTER TABLE `destination`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `hotel`
+-- AUTO_INCREMENT for table `hotels`
 --
-ALTER TABLE `hotel`
+ALTER TABLE `hotels`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `hotel_booking`
+-- AUTO_INCREMENT for table `hotel_bookings`
 --
-ALTER TABLE `hotel_booking`
+ALTER TABLE `hotel_bookings`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -645,9 +645,9 @@ ALTER TABLE `ticket_detail`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `tour_package`
+-- AUTO_INCREMENT for table `tour_packages`
 --
-ALTER TABLE `tour_package`
+ALTER TABLE `tour_packages`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
