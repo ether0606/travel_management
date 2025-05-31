@@ -5,6 +5,7 @@
                   <li><a href="index.php"><i class="fa fa-home"></i> Home</a></li>
                   <li><a><i class="fa fa-edit"></i> Settings <span class="fa fa-chevron-down"></span></a>
                     <ul class="nav child_menu">
+                      <li><a href="admin.php">Admin</a></li>
                       <li><a href="airline.php">Airline</a></li>
                       <li><a href="airport.php">Airport</a></li>
                       <li><a href="destination">Destination</a></li>
