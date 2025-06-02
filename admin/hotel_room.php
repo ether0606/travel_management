@@ -29,15 +29,15 @@
                       <thead>
                         <tr>
                           <th>#SL</th>
-                          <th>Hotel_id</th>
-                          <th>Room_type</th>
-                          <th>Price_Per_night</th>
-                          <th>Total_Room</th>
-                          <th>Available_Room</th>
+                          <th>Hotel id</th>
+                          <th>Room type</th>
+                          <th>Price Per night</th>
+                          <th>Total Room</th>
+                          <th>Available Room</th>
                           <th>Tv</th>
                           <th>AC</th>
                           <th>Fridge</th>
-                          <th>Complimentary_Breakfast</th>
+                          <th>Complimentary Breakfast</th>
                           <th>Guest Number</th>
                           <th>Status</th>
                           <th>Action</th>
