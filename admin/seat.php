@@ -1,5 +1,17 @@
 <?php include_once('include/header.php'); ?>
 <!--datatables-->
+<?php
+if (isset($_GET['airline_id'])) {
+    $where['id'] = $_GET['airline_id'];
+    $airline = $mysqli->common_select('airline', '*', $where);
+    if (!$airline['error'] && !empty($airline['data'])) {
+        $airline = $airline['data'][0];
+    } else {
+        $airline = null;
+    }
+} else {
+    $airline = null;
+} ?>
 
       <link href="assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
       <link href="assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
@@ -25,11 +37,11 @@
                     <thead>
                         <tr>
                             <th>#SL</th>
-                            <th>Airline_id</th>
-                            <th>Seat_Type</th>
-                            <th>Seat_Number</th>
-                            <th>Seat_Row</th>
-                            <th>Seat_Column</th>
+                            <th>Airline</th>
+                            <th>Seat Type</th>
+                            <th>Seat Number</th>
+                            <th>Seat Row</th>
+                            <th>Seat Column</th>
                             <th>Status</th>
                             <th>Action</th>
                         </tr>
@@ -42,7 +54,7 @@
                         ?>
                             <tr>
                                 <td><?= ++$i ?></td>
-                                <td><?= $airline_id ?></td> 
+                                <td><?= $airline ?></td> 
                                 <td><?= $d->seat_type ?></td>
                                 <td><?= $d->seat_number ?></td>
                                 <td><?= $d->seat_row ?></td>
