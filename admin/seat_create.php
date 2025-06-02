@@ -16,7 +16,7 @@
                                     <label class="col-md-3">Seat</label>
                                     <div class="col-md-6">
                                     <select name="airline_id" class="form-control" required>
-                                    <option value="">Select seat</option>
+                                    <option value="">Select airline</option>
                                     <?php
                                     $airlines = $mysqli->common_select('airline');
                                      if (!$airlines['error']) {
