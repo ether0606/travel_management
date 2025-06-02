@@ -29,11 +29,11 @@ $hotel_room = $hotel_room['data'][0];
 
 <form method="post" action="" class="form-horizontal form-label-left">
                                           <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="">Hotel Room Name <span class="required">*</span>
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="">Hotel Room  <span class="required">*</span>
                                                 </label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="" name="" value="<?=$hotel_room->name ?>"required="required" class="form-control ">
+                                                      <input type="text" id="" name="" value="<?=$hotel_room->id ?>"required="required" class="form-control ">
                                                 </div>
 
                                           </div>
@@ -42,7 +42,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 </label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="hotel_id" name="hotel_id" value="<?=$hotel_id->hotel_id ?>"required="required" class="form-control">
+                                                      <input type="text" id="hotel_id" name="hotel_id" value="<?=$hotel_room->hotel_id ?>" class="form-control">
                                                 </div>
 
                                           </div>
@@ -50,7 +50,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="room_type" class="col-form-label col-md-3 col-sm-3 label-align">Room type</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="room_type" class="form-control" type="text" name="room_type" value="<?=$room_type->room_type ?>">
+                                                      <input id="room_type" class="form-control" type="text" name="room_type" value="<?=$hotel_room->room_type ?>">
                                                 </div>
                                           </div>
 
