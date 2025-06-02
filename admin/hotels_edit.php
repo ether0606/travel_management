@@ -3,71 +3,41 @@
 
 <?php
 $where['id'] = $_GET['id'];
-$res = $mysqli->common_select('hotels', '*', $where);
-if (!$res['error']) {
-    $hotel = $res['data'][0];
-} else {
-    echo $res['error_msg'];
-    exit;
+$hotel = $mysqli->common_select('hotels', '*', $where);
+if (!$hotel['error']) {
+    $hotel = $hotel['data'][0];
 }
 ?>
 
 <h1>Edit Hotel</h1>
 <div class="row">
-    <div class="col-md-12 col-sm-12 ">
+    <div class="col-md-12">
         <div class="x_panel">
             <div class="x_content">
                 <form method="post" class="form-horizontal form-label-left">
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Hotel Name <span class="required">*</span></label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <input type="text" id="name" name="name" required class="form-control" value="<?= htmlspecialchars($hotel->name) ?>">
-                        </div>
+                    <div class="form-group">
+                        <label class="col-md-3">Hotel Name</label>
+                        <div class="col-md-6"><input type="text" name="name" value="<?= $hotel->name ?>" class="form-control"></div>
                     </div>
-
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="location_id">Location <span class="required">*</span></label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <select id="location_id" name="location_id" required class="form-control">
-                                <option value="">Select Location</option>
-                                <?php
-                                $locations = $mysqli->common_select('locations');
-                                if (!$locations['error']) {
-                                    foreach ($locations['data'] as $loc) {
-                                        $selected = ($hotel->location_id == $loc->id) ? "selected" : "";
-                                        echo "<option value='{$loc->id}' $selected>" . htmlspecialchars($loc->name) . "</option>";
-                                    }
-                                }
-                                ?>
-                            </select>
-                        </div>
+                    <div class="form-group">
+                        <label class="col-md-3">Location ID</label>
+                        <div class="col-md-6"><input type="number" name="location_id" value="<?= $hotel->location_id ?>" class="form-control"></div>
                     </div>
-
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="description">Description</label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <textarea id="description" name="description" class="form-control" rows="3"><?= htmlspecialchars($hotel->description) ?></textarea>
-                        </div>
+                    <div class="form-group">
+                        <label class="col-md-3">Description</label>
+                        <div class="col-md-6"><textarea name="description" class="form-control"><?= $hotel->description ?></textarea></div>
                     </div>
-
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="image_url">Image URL</label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <input type="text" id="image_url" name="image_url" class="form-control" value="<?= htmlspecialchars($hotel->image_url) ?>">
-                        </div>
+                    <div class="form-group">
+                        <label class="col-md-3">Image URL</label>
+                        <div class="col-md-6"><input type="text" name="image_url" value="<?= $hotel->image_url ?>" class="form-control"></div>
                     </div>
-
-                    <div class="item form-group">
-                        <label class="col-form-label col-md-3 col-sm-3 label-align" for="rating">Rating</label>
-                        <div class="col-md-6 col-sm-6 ">
-                            <input type="number" id="rating" name="rating" min="0" max="5" step="0.1" class="form-control" value="<?= htmlspecialchars($hotel->rating) ?>">
-                        </div>
+                    <div class="form-group">
+                        <label class="col-md-3">Rating</label>
+                        <div class="col-md-6"><input type="number" name="rating" step="0.1" value="<?= $hotel->rating ?>" class="form-control"></div>
                     </div>
-
-                    <div class="ln_solid"></div>
-                    <div class="item form-group">
-                        <div class="col-md-6 col-sm-6 offset-md-3">
-                            <button type="submit" class="btn btn-success">Submit</button>
+                    <div class="form-group">
+                        <div class="col-md-6 offset-md-3">
+                            <button type="submit" class="btn btn-success">Update</button>
                         </div>
                     </div>
                 </form>
