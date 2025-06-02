@@ -12,7 +12,7 @@
 <!-- /top navigation -->
 
      <!-- page content -->
-      <h1>Airline</h1>
+      <h1>Seat_fare</h1>
             <div class="col-md-12 col-sm-12 ">
                 <div class="x_panel">
                   
