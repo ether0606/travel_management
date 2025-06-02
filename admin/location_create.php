@@ -7,7 +7,7 @@
       <h1>Add Location</h1>
 
 
- div class="row">
+ <div class="row">
                   <div class="col-md-12 col-sm-12 ">
                         <div class="x_panel">
                               
@@ -18,20 +18,14 @@
                                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="">Location <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="name" name="name" required="required" class="form-control ">
+                                                      <input type="text" id="" name="" required="required" class="form-control ">
                                                 </div>
                                           </div>
                                           <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="contact">Contact <span class="required">*</span>
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Name <span class="required">*</span>
                                                 </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="contact" name="contact" required="required" class="form-control">
-                                                </div>
-                                          </div>
-                                          <div class="item form-group">
-                                                <label for="address" class="col-form-label col-md-3 col-sm-3 label-align">Address</label>
-                                                <div class="col-md-6 col-sm-6 ">
-                                                      <input id="address" class="form-control" type="text" name="address">
+                                                      <input type="text" id="name" name="name" required="required" class="form-control">
                                                 </div>
                                           </div>
                                           
@@ -52,9 +46,9 @@
                                                 $_POST['created_at'] = date('Y-m-d H:i:s');
                                                 $_POST['created_by'] = $_SESSION['user']->id;
                                                 $_POST['status'] = 1;
-                                                $res = $mysqli->common_insert('airline', $_POST);
+                                                $res = $mysqli->common_insert('location', $_POST);
                                                 if (!$res['error']) {
-                                                      echo "<script>location.href='" . $baseurl . "airline.php'</script>";
+                                                      echo "<script>location.href='" . $baseurl . "location.php'</script>";
                                                 } else {
                                                       echo $res['error_msg'];
                                                 }
