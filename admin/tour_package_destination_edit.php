@@ -4,7 +4,7 @@
 <!-- /top navigation -->
 <?php
 $where['id']=$_GET['id'];
-$airline = $mysqli->common_select('tour_package_destination','*', $where);
+$tour_package_destination = $mysqli->common_select('tour_package_destination','*', $where);
 if(!$tour_package_destination['error']){
 $tour_package_destination = $tour_package_destination['data'][0];
 }
