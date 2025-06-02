@@ -47,9 +47,9 @@
                                                 $_POST['created_at'] = date('Y-m-d H:i:s');
                                                 $_POST['created_by'] = $_SESSION['user']->id;
                                                 $_POST['status'] = 1;
-                                                $res = $mysqli->common_insert('airline', $_POST);
+                                                $res = $mysqli->common_insert('seat_fare', $_POST);
                                                 if (!$res['error']) {
-                                                      echo "<script>location.href='" . $baseurl . "airline.php'</script>";
+                                                      echo "<script>location.href='" . $baseurl . "seat_fare.php'</script>";
                                                 } else {
                                                       echo $res['error_msg'];
                                                 }

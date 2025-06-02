@@ -1,11 +1,13 @@
 <?php include_once('include/header.php'); ?>
 <?php include_once('include/topbar.php'); ?>
 
-<h1>Add Admin</h1>
-<div class="row">
-    <div class="col-md-12">
-        <div class="x_panel">
-            <div class="x_content">
+<h1>Add Admin </h1>
+    <div class="row">
+         <div class="col-md-12 col-sm-12 ">
+            <div class="x_panel">
+                              
+                <div class="x_content">
+                    <br />
                 <form method="post" action="" class="form-horizontal form-label-left">
                     <div class="form-group">
                         <label>Full Name</label>
