@@ -61,7 +61,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="price_per_night" class="col-form-label col-md-3 col-sm-3 label-align">Price per Night</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="price_per_night" class="form-control" type="text" name="price_per_night">
+                                                      <input id="price_per_night" class="form-control" type="text" name="price_per_night" value="<?=$hotel_room->price_per_night?>">
                                                 </div>
                                           </div>
 
@@ -69,7 +69,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="total_room" class="col-form-label col-md-3 col-sm-3 label-align">Total Room</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="total_room" class="form-control" type="text" name="total_room">
+                                                      <input id="total_room" class="form-control" type="text" name="total_room" value="<?=$hotel_room->total_room?>">
                                                 </div>
                                           </div>
 
@@ -78,7 +78,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="available_room" class="col-form-label col-md-3 col-sm-3 label-align">Available Room</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="available_room" class="form-control" type="text" name="available_room">
+                                                      <input id="available_room" class="form-control" type="text" name="available_room" value="<?=$hotel_room->available_room ?>">
                                                 </div>
                                           </div>
 
@@ -86,7 +86,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="tv" class="col-form-label col-md-3 col-sm-3 label-align">Tv</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="tv" class="form-control" type="text" name="tv">
+                                                      <input id="tv" class="form-control" type="text" name="tv" value="<?=$hotel_room->tv ?>">
                                                 </div>
                                           </div>
 
@@ -97,7 +97,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="ac" class="col-form-label col-md-3 col-sm-3 label-align">AC</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="ac" class="form-control" type="text" name="ac">
+                                                      <input id="ac" class="form-control" type="text" name="ac" value="<?=$hotel_room->ac ?>">
                                                 </div>
                                           </div>
 
@@ -106,7 +106,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="fridge" class="col-form-label col-md-3 col-sm-3 label-align">Fridge</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="ac" class="form-control" type="text" name="fridge">
+                                                      <input id="ac" class="form-control" type="text" name="fridge" value="<?=$hotel_room->fridge ?>">
                                                 </div>
                                           </div>
                                           
@@ -115,7 +115,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="" class="col-form-label col-md-3 col-sm-3 label-align">Breakfast</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="breakfast" class="form-control" type="text" name="complimentary_breakfast">
+                                                      <input id="breakfast" class="form-control" type="text" name="complimentary_breakfast" value="<?=$hotel_room->complimentary_breakfast ?>">
                                                 </div>
                                           </div>
 
@@ -123,7 +123,7 @@ $hotel_room = $hotel_room['data'][0];
                                                 <label for="" class="col-form-label col-md-3 col-sm-3 label-align">Guest Number</label>
 
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id="guest_number" class="form-control" type="text" name="guest_number">
+                                                      <input id="guest_number" class="form-control" type="text" name="guest_number" value="<?=$hotel_room->guest_number ?>">
                                                 </div>
                                           </div>  
 
