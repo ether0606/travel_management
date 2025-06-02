@@ -24,6 +24,10 @@ if (!$admin['error']) {
                         <input type="email" name="email" value="<?= $admin->email ?>" class="form-control">
                     </div>
                     <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" name="password" value="<?= $admin->password ?>" class="form-control">
+                    </div>
+                    <div class="form-group">
                         <label>Contact</label>
                         <input type="text" name="contact" value="<?= $admin->contact ?>" class="form-control">
                     </div>
