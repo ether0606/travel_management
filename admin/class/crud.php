@@ -7,6 +7,8 @@
         protected $password='';
         protected $database='travel_management';
         protected $connect;
+        public $base_url='http://localhost/travel_management/';
+        public $project_name='travel_management/';
 
 
         function __construct(){
@@ -211,5 +213,30 @@
             
             return array('data'=>$data,'error'=>$error,'error_msg'=>$error_msg);
 
+        }
+
+        public function upload_file($file,$path){
+            $path=$_SERVER['DOCUMENT_ROOT'].'/'.$this->project_name."admin/assets/images/".$path;
+            if(!file_exists($path)){
+                mkdir($path,0777,true);
+            }
+            $error=0;
+            $error_msg="";
+            $file_name="";
+            $file_error="";
+            $file_name=$file['name'];
+            $file_error=$file['error'];
+            $file_name=time().rand(1000,9999).$file_name;
+            $file_path=$path.'/'.$file_name;
+            if($file_error==0){
+                if(move_uploaded_file($file['tmp_name'],$file_path)){
+                    $error=0;
+                    $error_msg="File uploaded successfully";
+                }else{
+                    $error=1;
+                    $error_msg="File not uploaded";
+                }
+            }
+            return array('error'=>$error,'error_msg'=>$error_msg,'file_name'=>$file_name,'file_path'=>$file_path,'file_error'=>$file_error);
         }
     }

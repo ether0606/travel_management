@@ -39,7 +39,7 @@
               </thead>
               <tbody>
                 <?php
-                $res = $mysqli->common_select('tour_packages');
+                $res = $mysqli->common_query('select tour_packages.*, destination.name as destination from tour_packages join destination on tour_packages.destination_id = destination.id where tour_packages.status = 1 order by tour_packages.id desc');
                 if (!$res['error']) {
                   foreach ($res['data'] as $i => $d) {
                 ?>
@@ -53,7 +53,7 @@
                     <td><?= $d->start_date ?></td>
                     <td><?= $d->end_date ?></td>
                     <td><?= $d->available_slot ?></td>
-                    <td><img src="<?= $d->image_url ?>" width="50"></td>
+                    <td><img src="<?= $base_url ?>admin/assets/images/tour_packages/<?= $d->image_url ?>" width="50"></td>
                     <td><?= $d->status ? "Active" : "Inactive" ?></td>
                     <td>
                     <a href="tour_packages_edit.php?id=<?= $d->id ?>" class="btn btn-primary btn-sm">Edit</a>

@@ -25,7 +25,7 @@ $tour_package = $res['data'][0];
   <div class="col-md-12 col-sm-12 ">
     <div class="x_panel">
       <div class="x_content">
-        <form method="post" class="form-horizontal form-label-left">
+        <form method="post" enctype="multipart/form-data" class="form-horizontal form-label-left">
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Title <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 ">
@@ -35,13 +35,21 @@ $tour_package = $res['data'][0];
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="description">Description</label>
             <div class="col-md-6 col-sm-6 ">
-              <textarea id="description" name="description" class="form-control"><?= htmlspecialchars($tour_package->description) ?></textarea>
+              <textarea id="description" name="description" class="form-control"><?= $tour_package->description ?></textarea>
             </div>
           </div>
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination">Destination</label>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination">Destination <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="destination" name="destination" class="form-control" value="<?= htmlspecialchars($tour_package->destination) ?>">
+              <select id="destination" name="destination_id" required="required" class="form-control">
+                <option value="">Select Destination</option>
+                <?php
+                  $destinations = $mysqli->common_select('destination');
+                  foreach ($destinations['data'] as $destination) {
+                ?>
+                  <option value='<?= $destination->id ?>' <?= $destination->id==$tour_package->destination_id ?"selected":"" ?> ><?= $destination->name ?></option>
+                <?php } ?>
+              </select>
             </div>
           </div>
           <div class="item form-group">
@@ -59,13 +67,13 @@ $tour_package = $res['data'][0];
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="start_date">Start Date</label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="date" id="start_date" name="start_date" class="form-control" value="<?= htmlspecialchars($tour_package->start_date) ?>">
+              <input type="datetime-local" id="start_date" name="start_date" class="form-control" value="<?= htmlspecialchars($tour_package->start_date) ?>">
             </div>
           </div>
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="end_date">End Date</label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="date" id="end_date" name="end_date" class="form-control" value="<?= htmlspecialchars($tour_package->end_date) ?>">
+              <input type="datetime-local" id="end_date" name="end_date" class="form-control" value="<?= $tour_package->end_date ?>">
             </div>
           </div>
           <div class="item form-group">
@@ -75,9 +83,9 @@ $tour_package = $res['data'][0];
             </div>
           </div>
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="image_url">Image Url</label>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="image_url">Image URL</label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="image_url" name="image_url" class="form-control" value="<?= htmlspecialchars($tour_package->image_url) ?>">
+              <input type="file" id="image_url" name="image_url" class="form-control">
             </div>
           </div>
 
@@ -91,7 +99,13 @@ $tour_package = $res['data'][0];
         </form>
 
         <?php
+        echo $_SERVER['DOCUMENT_ROOT'];
         if ($_POST) {
+          if($_FILES['image_url']['name']) {
+            $image_url = $mysqli->upload_file($_FILES['image_url'], 'tour_packages');
+            $_POST['image_url'] = $image_url['file_name'];
+          }
+          
           $_POST['updated_at'] = date('Y-m-d H:i:s');
           $_POST['updated_by'] = $_SESSION['user']->id;
           $_POST['status'] = 1;

@@ -10,7 +10,7 @@
     <div class="x_panel">
       <div class="x_content">
         <br />
-        <form method="post" action="" class="form-horizontal form-label-left">
+        <form method="post" action="" enctype="multipart/form-data" class="form-horizontal form-label-left">
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="title">Title <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 ">
@@ -28,7 +28,15 @@
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination">Destination <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="destination" name="destination" required="required" class="form-control">
+              <select id="destination" name="destination" required="required" class="form-control">
+                <option value="">Select Destination</option>
+                <?php
+                $destinations = $mysqli->common_select('destination');
+                foreach ($destinations['data'] as $destination) {
+                  echo "<option value='" . $destination->id . "'>" . $destination->name . "</option>";
+                }
+                ?>
+              </select>
             </div>
           </div>
 
@@ -70,7 +78,7 @@
           <div class="item form-group">
             <label class="col-form-label col-md-3 col-sm-3 label-align" for="image_url">Image URL</label>
             <div class="col-md-6 col-sm-6 ">
-              <input type="text" id="image_url" name="image_url" class="form-control">
+              <input type="file" id="image_url" name="image_url" class="form-control">
             </div>
           </div>
 
@@ -84,10 +92,15 @@
 
         <?php
         if ($_POST) {
+
+          if($_FILES['image_url']['name']) {
+            $image_url = $mysqli->upload_file($_FILES['image_url'], 'tour_packages');
+            unset($_POST['image_url']);
+          }
+          print_r($image_url);
+          die();
           $_POST['created_at'] = date('Y-m-d H:i:s');
-          $_POST['updated_at'] = date('Y-m-d H:i:s');
           $_POST['created_by'] = $_SESSION['user']->id;
-          $_POST['updated_by'] = $_SESSION['user']->id;
           $_POST['status'] = 1;
 
           $res = $mysqli->common_insert('tour_packages', $_POST);
