@@ -26,16 +26,16 @@ $seat_fare = $seat_fare['data'][0];
                                           </div>
                                     </div>
                                     <div class="item form-group">
-                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="seat_id ">seat_id  <span class="required">*</span>
+                                          <label class="col-form-label col-md-3 col-sm-3 label-align" for="seat_id">seat_id <span class="required">*</span>
                                           </label>
                                           <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" id="seat_id " name="seat_id " value="<?= $seat_fare->seat_id  ?>" required="required" class="form-control">
+                                                <input type="text" id="seat_id" name="seat_id" value="<?= $seat_fare->seat_id  ?>" required="required" class="form-control">
                                           </div>
                                     </div>
                                     <div class="item form-group">
-                                          <label for="seat_fare " class="col-form-label col-md-3 col-sm-3 label-align">seat_fare </label>
+                                          <label for="seat_fare" class="col-form-label col-md-3 col-sm-3 label-align">seat_fare </label>
                                           <div class="col-md-6 col-sm-6 ">
-                                                <input id="seat_fare " class="form-control" value="<?= $seat_fare->seat_fare  ?>" type="text" name="seat_fare ">
+                                                <input id="seat_fare" class="form-control" value="<?= $seat_fare->seat_fare  ?>" type="text" name="seat_fare">
                                           </div>
                                     </div>
                                     

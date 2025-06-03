@@ -40,13 +40,13 @@ $tour_package_booking = $tour_package_booking['data'][0];
                                      <div class="item form-group">
                                           <label for="qty" class="col-form-label col-md-3 col-sm-3 label-align">qty</label>
                                           <div class="col-md-6 col-sm-6 ">
-                                                <input id="qty" class="form-control" value="<?= $tour_package_booking->address ?>" type="text" name="qty">
+                                                <input id="qty" class="form-control" value="<?= $tour_package_booking->qty ?>" type="text" name="qty">
                                           </div>
                                     </div>
                                      <div class="item form-group">
                                           <label for="discount" class="col-form-label col-md-3 col-sm-3 label-align">discount</label>
                                           <div class="col-md-6 col-sm-6 ">
-                                                <input id="discount" class="form-control" value="<?= $tour_package_booking->address ?>" type="text" name="discount">
+                                                <input id="discount" class="form-control" value="<?= $tour_package_booking->discount ?>" type="text" name="discount">
                                           </div>
                                     </div>
                                      <div class="item form-group">

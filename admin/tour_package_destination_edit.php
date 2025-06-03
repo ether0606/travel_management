@@ -28,7 +28,7 @@ $tour_package_destination = $tour_package_destination['data'][0];
                                           <label class="col-form-label col-md-3 col-sm-3 label-align" for="contact"> destination_id <span class="required">*</span>
                                           </label>
                                           <div class="col-md-6 col-sm-6 ">
-                                                <input type="text" id=" destination_id " name=" destination_id " value="<?= $tour_package_destination-> destination_id  ?>" required="required" class="form-control">
+                                                <input type="text" id=" destination_id" name=" destination_id" value="<?= $tour_package_destination->destination_id  ?>" required="required" class="form-control">
                                           </div>
                                     </div>
                                     

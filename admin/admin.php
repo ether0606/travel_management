@@ -1,6 +1,16 @@
 <?php include_once('include/header.php'); ?>
-<?php include_once('include/topbar.php'); ?>
+<!-- Datatables -->
+    <link href="assets/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/datatables.net-buttons-bs/css/buttons.bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/datatables.net-fixedheader-bs/css/fixedHeader.bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/datatables.net-responsive-bs/css/responsive.bootstrap.min.css" rel="stylesheet">
+    <link href="assets/vendors/datatables.net-scroller-bs/css/scroller.bootstrap.min.css" rel="stylesheet">
 
+<!-- top navigation -->
+<?php include_once('include/topbar.php'); ?>
+<!-- /top navigation -->
+
+     <!-- page content -->
 <h1>Admin</h1>
 <div class="col-md-12 col-sm-12">
     <div class="x_panel">
@@ -13,6 +23,7 @@
                             <th>#SL</th>
                             <th>Full Name</th>
                             <th>Email</th>
+                            <th>Password</th>
                             <th>Contact</th>
                             <th>Address</th>
                             <th>Status</th>
@@ -29,6 +40,7 @@
                             <td><?= ++$i; ?></td>
                             <td><?= $d->full_name ?></td>
                             <td><?= $d->email ?></td>
+                            <td><?= $d->password ?></td>
                             <td><?= $d->contact ?></td>
                             <td><?= $d->address ?></td>
                             <td><?= $d->status ? "Active" : "Inactive" ?></td>
@@ -46,3 +58,19 @@
 </div>
 
 <?php include_once('include/footer.php'); ?>
+<!-- Datatables -->
+<script src="assets/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="assets/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script src="assets/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="assets/vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+    <script src="assets/vendors/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="assets/vendors/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="assets/vendors/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="assets/vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js"></script>
+    <script src="assets/vendors/datatables.net-keytable/js/dataTables.keyTable.min.js"></script>
+    <script src="assets/vendors/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="assets/vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js"></script>
+    <script src="assets/vendors/datatables.net-scroller/js/dataTables.scroller.min.js"></script>
+    <script src="assets/vendors/jszip/dist/jszip.min.js"></script>
+    <script src="assets/vendors/pdfmake/build/pdfmake.min.js"></script>
+    <script src="assets/vendors/pdfmake/build/vfs_fonts.js"></script>

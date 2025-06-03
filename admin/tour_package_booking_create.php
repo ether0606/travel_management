@@ -39,17 +39,12 @@
                                                 </div>
                                           </div>
                                           <div class="item form-group">
-                                                <label for=" discount " class="col-form-label col-md-3 col-sm-3 label-align"> discount </label>
+                                                <label for="discount" class="col-form-label col-md-3 col-sm-3 label-align"> discount </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input id=" discount " class="form-control" type="text" name=" discount ">
+                                                      <input id="discount" class="form-control" type="text" name="discount">
                                                 </div>
                                           </div>
-                                          <div class="item form-group">
-                                                <label for="address" class="col-form-label col-md-3 col-sm-3 label-align">Address</label>
-                                                <div class="col-md-6 col-sm-6 ">
-                                                      <input id="address" class="form-control" type="text" name="address">
-                                                </div>
-                                          </div>
+                                          
                                           <div class="item form-group">
                                                 <label for="total_amount" class="col-form-label col-md-3 col-sm-3 label-align">total_amount</label>
                                                 <div class="col-md-6 col-sm-6 ">
