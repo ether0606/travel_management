@@ -73,7 +73,7 @@
 					<div class="row">
 						<div class="col-sm-2">
 							<div class="logo">
-								<a href="index.html">
+								<a href="<?= $mysqli->base_url ?>">
 									tour<span>Nest</span>
 								</a>
 							</div><!-- /.logo-->
