@@ -40,46 +40,36 @@
 
 <div class="container mt-6" id="book_form">
     <div class="row" style="margin-top: 100px;">
-        <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+        
+         <div class="col-lg-2 col-md-3 col-sm-4">
             <div class="single-tab-select-box">
-
-                <h2>destination</h2>
-
-                <div class="travel-select-icon">
-                    <select class="form-control ">
-
-                        <option value="default">enter your destination country</option><!-- /.option-->
-
-                        <option value="turkey">turkey</option><!-- /.option-->
-
-                        <option value="russia">russia</option><!-- /.option-->
-                        <option value="egept">egypt</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
-
-                <div class="travel-select-icon">
-                    <select class="form-control ">
-
-                        <option value="default">enter your destination location</option><!-- /.option-->
-
-                        <option value="istambul">istambul</option><!-- /.option-->
-
-                        <option value="mosko">mosko</option><!-- /.option-->
-                        <option value="cairo">cairo</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
-
+                <h2>name</h2>
+                <div class="travel-check-icon">
+                    <form action="#"> 
+                        <input type="text" name="name" id ="name" class="form-control"  placeholder="enter your name">
+                    </form>
+                </div><!-- /.travel-check-icon -->
             </div><!--/.single-tab-select-box-->
         </div><!--/.col-->
 
-        <div class="col-lg-2 col-md-3 col-sm-4">
+
+         <div class="col-lg-2 col-md-3 col-sm-4">
             <div class="single-tab-select-box">
-                <h2>check in</h2>
+                <h2>Email</h2>
                 <div class="travel-check-icon">
                     <form action="#">
-                        <input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
+                        <input type="email" name="email" id="email" class="form-control" data-toggle="" placeholder="enter your email">
+                    </form>
+                </div><!-- /.travel-check-icon -->
+            </div><!--/.single-tab-select-box-->
+        </div><!--/.col-->
+
+         <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+                <h2>Passowrd</h2>
+                <div class="travel-check-icon">
+                    <form action="#">
+                        <input type="password" name="password" id="password" class="form-control"  placeholder="XXXXXXXX">
                     </form>
                 </div><!-- /.travel-check-icon -->
             </div><!--/.single-tab-select-box-->
@@ -87,10 +77,10 @@
 
         <div class="col-lg-2 col-md-3 col-sm-4">
             <div class="single-tab-select-box">
-                <h2>check out</h2>
+                <h2>booking_date</h2>
                 <div class="travel-check-icon">
                     <form action="#">
-                        <input type="text" name="check_out" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
+                        <input type="text" name="booking_date" id="booking date" class="form-control" data-toggle="datepicker" placeholder="00 -00 - 0000 ">
                     </form>
                 </div><!-- /.travel-check-icon -->
             </div><!--/.single-tab-select-box-->
@@ -98,25 +88,7 @@
 
         <div class="col-lg-2 col-md-1 col-sm-4">
             <div class="single-tab-select-box">
-                <h2>duration</h2>
-                <div class="travel-select-icon">
-                    <select class="form-control ">
-
-                        <option value="default">5</option><!-- /.option-->
-
-                        <option value="10">10</option><!-- /.option-->
-
-                        <option value="15">15</option><!-- /.option-->
-                        <option value="20">20</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-        <div class="col-lg-2 col-md-1 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>members</h2>
+                <h2>Quantity</h2>
                 <div class="travel-select-icon">
                     <select class="form-control ">
 
@@ -132,37 +104,17 @@
             </div><!--/.single-tab-select-box-->
         </div><!--/.col-->
     </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    
 
-    <div class="row">
-         <div class="col-lg-6 p-5"> 
-	      <form>
-            <h1>Form</h1>
-            <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control" id="name" >
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Email address</label>
-                    <input type="email" class="form-control" id="email">
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" class="form-control" id="password">
-                </div>
-                <div class="form-group">
-                    <label for="booking date">Booking Date</label>
-                    <input type="text" class="form-control" id="booking date">
-                </div>
-                
-                <div class="form-group">
-                    <label for="quantity">Quantity</label>
-                    <input type="quantity" class="form-control" id="quantity">
-                
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-     </div>
-</div>
+    
 
 
 <?php include_once('includes/footer.php'); ?>
+
+
+
+
+
+
