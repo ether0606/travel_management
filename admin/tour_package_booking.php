@@ -38,7 +38,10 @@
                       <tbody>
                         <?php
 
-                        $res = $mysqli->common_query('select tour_package_booking.*, user.name as user,tour_packages.title as tour_package, from tour_package_booking join user on tour_package_booking.user_id = user.id  join tour_package on tour_package_booking where tour_packages_booking.status = 1 order by tour_package_booking.id desc');
+                        $res = $mysqli->common_query('select tour_package_booking.*, user.name as user,tour_packages.title as tour_package, from tour_package_booking
+                         join user on tour_package_booking.user_id = user.id 
+                         join tour_package on tour_package_booking.tour_id=tour.id
+                           where tour_packages_booking.status = 1 order by tour_package_booking.id desc');
 
                        // $res = $mysqli->common_select('tour_package_booking');
                         if (!$res['error']) {
