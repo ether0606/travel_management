@@ -10,9 +10,9 @@
 								<div class="about-us-txt">
                                     
 									<h2>
-									afjsfhj
+									Hotel Bookings
 									</h2>
-                                    <p style="color:#FFF">jfgirjo</p>
+                                    <p style="color:#FFF">Hotel</p>
 									<div class="about-btn">
 										<a href="#book_form"  class="about-view">Book Now</a>
 									</div><!--/.about-btn-->
@@ -137,52 +137,34 @@
 
 
 <div class="col-lg-2 col-md-1 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>User Id</h2>
-                <div class="travel-select-icon">
-                    <select class="form-control ">
-
-                        <option value="default">1</option><!-- /.option-->
-
-                        <option value="2">2</option><!-- /.option-->
-
-                        <option value="4">4</option><!-- /.option-->
-                        <option value="8">8</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-    </div>
+            
+                <h2>user id</h2>
+               
+                    <input type="text" name="user_id">
+                    
+                <!-- /.travel-select-icon -->
+            <!--/.single-tab-select-box-->
+        </div>
 
 
 
 <div class="col-lg-2 col-md-1 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>Hotel Id</h2>
-                <div class="travel-select-icon">
-                    <select class="form-control ">
-
-                        <option value="default">1</option><!-- /.option-->
-
-                        <option value="2">2</option><!-- /.option-->
-
-                        <option value="4">4</option><!-- /.option-->
-                        <option value="8">8</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-    </div>
+            
+                <h2>hotel id</h2>
+               
+                    <input type="text" name="hotel_id">
+                    
+                <!-- /.travel-select-icon -->
+            <!--/.single-tab-select-box-->
+        </div><br><br><br><br>
 
 
 
 
     <div class="row">
          <div class="col-lg-6 p-5"> 
-	      <form>
-            
+	      
+           <form> 
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
