@@ -218,10 +218,12 @@
 
 															  	<option value="default">enter your destination country</option><!-- /.option-->
 
-															  	<option value="turkey">turkey</option><!-- /.option-->
-
-															  	<option value="russia">russia</option><!-- /.option-->
-															  	<option value="egept">egypt</option><!-- /.option-->
+															  	<?php 
+																	$locations = $mysqli->common_select("location", "id, name");
+																	
+																	foreach ($locations['data'] as $location) : ?>
+																		<option value="<?= $location->id ?>"><?= $location->name ?></option>
+																<?php endforeach; ?>
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
@@ -264,23 +266,7 @@
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
 
-												<div class="col-lg-2 col-md-1 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>duration</h2>
-														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">5</option><!-- /.option-->
-
-															  	<option value="10">10</option><!-- /.option-->
-
-															  	<option value="15">15</option><!-- /.option-->
-															  	<option value="20">20</option><!-- /.option-->
-
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
+												
 
 												<div class="col-lg-2 col-md-1 col-sm-4">
 													<div class="single-tab-select-box">

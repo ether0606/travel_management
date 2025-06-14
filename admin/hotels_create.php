@@ -13,7 +13,15 @@
     <div class="form-group row">
         <label class="col-md-3 col-form-label">Location ID</label>
         <div class="col-md-6">
-            <input type="number" name="location_id" class="form-control">
+            <select name="location_id" id="location_id" class="form-control">
+                <option value="">Select Location</option>
+                <?php 
+                $locations = $mysqli->common_select("location", "id, name");
+                
+                foreach ($locations['data'] as $location) : ?>
+                    <option value="<?= $location->id ?>"><?= $location->name ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
     </div>
 
