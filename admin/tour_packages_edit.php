@@ -39,9 +39,9 @@ $tour_package = $res['data'][0];
             </div>
           </div>
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination">Destination <span class="required">*</span></label>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination_id">Destination <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 ">
-              <select id="destination" name="destination_id" required="required" class="form-control">
+              <select id="destination_id" name="destination_id" required="required" class="form-control">
                 <option value="">Select Destination</option>
                 <?php
                   $destinations = $mysqli->common_select('destination');
@@ -99,7 +99,7 @@ $tour_package = $res['data'][0];
         </form>
 
         <?php
-        echo $_SERVER['DOCUMENT_ROOT'];
+        
         if ($_POST) {
           if($_FILES['image_url']['name']) {
             $image_url = $mysqli->upload_file($_FILES['image_url'], 'tour_packages');

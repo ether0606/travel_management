@@ -665,9 +665,6 @@
 							</div><!--/.single-package-item-->
 						</div><!--/.col-->
 					<?php } } ?>
-						
-
-
 					</div><!--/.row-->
 				</div><!--/.packages-content-->
 			</div><!--/.container-->
