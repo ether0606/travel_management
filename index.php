@@ -638,7 +638,7 @@
 						special packages
 					</h2>
 					<p>
-						Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
+						Prepare to experience Bangladesh's rich culture and explore the majestic beauties of Cox's Bazar, Sylhet, Bandarban, Sajek Valley, Rangamati etc. Plan your trip now!
 					</p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
