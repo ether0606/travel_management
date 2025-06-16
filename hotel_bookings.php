@@ -63,10 +63,10 @@
                         <option value="coxbazar">Cox's Bazar</option><!-- /.option-->
 
                     </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
+                        </div><!-- /.travel-select-icon -->
 
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
+                    </div><!--/.single-tab-select-box-->
+                </div><!--/.col-->
 
 
 
@@ -79,7 +79,7 @@
                     </form>
                 </div><!-- /.travel-check-icon -->
             </div><!--/.single-tab-select-box-->
-        </div>
+    </div>
 
 
 
@@ -109,6 +109,7 @@
         <div class="col-lg-2 col-md-1 col-sm-4">
             
                 <h2>total amount</h2>
+                
                
                     <input type="text" name="total_amount">
                     
@@ -144,7 +145,7 @@
                     
                 <!-- /.travel-select-icon -->
             <!--/.single-tab-select-box-->
-        </div>
+</div>
 
 
 
