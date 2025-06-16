@@ -1,26 +1,13 @@
 <?php include_once('includes/header.php'); ?>
 
 <?php
-$res = $mysqli->common_query(" 
-    SELECT 
-        hotel_bookings.*, 
-        user.name AS user_name, 
-        user.id AS user_id,
-        hotel.name AS hotel_name,
-        hotel.id AS hotel_id
-    FROM hotel_bookings
-    JOIN user ON hotel_bookings.user_id = user.id
-    JOIN hotel ON hotel_bookings.hotel_id = hotel.id
-    WHERE hotel_bookings.status = 1 
-    AND hotel_bookings.id = '" . $_GET['id'] . "'
-");
-
-if ($res['error'] == 0) {
+$res = $mysqli->common_query("select hotel_bookings.*, user.name as user_name,user.id as user_id, hotel.name as hotel_name, hotel.id as hotel_id  from hotel_bookings join user on hotel_bookings.user_id = user.id join hotel on hotel_bookings.hotel_id = hotel.id where hotel_bookings.status = 1 and hotel_bookings.id = '" . $_GET['id'] . "'");
+    
+ if ($res['error'] == 0) {
     $data = $res['data'][0];
 }
-?>
-
-
+?>       
+        
 <!--about-us start -->
 		<section id="home" class="about-us" style="background-image: url('<?= $mysqli->base_url ?>assets/images/pexels-asman-chema-91897-594077.jpg');">
 			<div class="container">
