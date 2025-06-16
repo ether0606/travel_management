@@ -1,7 +1,7 @@
 <?php include_once('includes/header.php'); ?>
 
 <?php
-$res = $mysqli->common_query("select hotel_bookings.*, user.name as user_name,user.id as user_id, hotel.name as hotel_name, hotel.id as hotel_id  from hotel_bookings join user on hotel_bookings.user_id = user.id join hotel on hotel_bookings.hotel_id = hotel.id where hotel_bookings.status = 1 and hotel_bookings.id = '" . $_GET['id'] . "'");
+$res = $mysqli->common_query("select hotel_bookings.*, user.name as user, hotel.name as hotel from hotel_bookings join user on hotel_bookings.user_id = user.id join hotel on hotel_bookings.hotel_id = hotel.id where hotel_bookings.status = 1 and hotel_bookings.id = '" . $_GET['id']."'");
     
  if ($res['error'] == 0) {
     $data = $res['data'][0];
