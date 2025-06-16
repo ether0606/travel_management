@@ -1,5 +1,6 @@
 <?php include('includes/header.php'); ?>
 
+
 		
 		<!--about-us start -->
 		<section id="home" class="about-us">
@@ -638,7 +639,7 @@
 						special packages
 					</h2>
 					<p>
-						Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
+						Prepare to experience Bangladesh's rich culture and explore the majestic beauties of Cox's Bazar, Sylhet, Bandarban, Sajek Valley, Rangamati etc. Plan your trip now!
 					</p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
@@ -665,9 +666,6 @@
 							</div><!--/.single-package-item-->
 						</div><!--/.col-->
 					<?php } } ?>
-						
-
-
 					</div><!--/.row-->
 				</div><!--/.packages-content-->
 			</div><!--/.container-->
