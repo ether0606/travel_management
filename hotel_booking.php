@@ -292,12 +292,113 @@ $res = $mysqli->common_query("select hotel_bookings.*, user.name as user, hotel.
 				</div><!--/.packages-content-->
 			</div><!--/.container-->
 
+<<<<<<< HEAD
+                        <option value="chattogram">Chattogram</option><!-- /.option-->
+                        <option value="coxbazar">Cox's Bazar</option><!-- /.option-->
+
+                    </select><!-- /.select-->
+                        </div><!-- /.travel-select-icon -->
+
+                    </div><!--/.single-tab-select-box-->
+                </div><!--/.col-->
+
+
+
+    <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+                <h2>booking date</h2>
+                <div class="travel-check-icon">
+                    <form action="#">
+                        <input type="text" name="booking_date" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
+                    </form>
+                </div><!-- /.travel-check-icon -->
+            </div><!--/.single-tab-select-box-->
+    </div>
+=======
 		</section><!--/.packages-->
 		<!--packages end-->
+>>>>>>> e02d61366750411de52cce209f6b0e42a388e910
 
 
 
 
+<<<<<<< HEAD
+        <div class="col-lg-2 col-md-3 col-sm-4">
+            <div class="single-tab-select-box">
+                <h2>check in</h2>
+                <div class="travel-check-icon">
+                    <form action="#">
+                        <input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
+                    </form>
+                </div><!-- /.travel-check-icon -->
+            </div><!--/.single-tab-select-box-->
+        </div><!--/.col-->
+
+        <div class="col-lg-2 col-md-3 col-sm-1">
+            <div class="single-tab-select-box">
+                <h2>check out</h2>
+                <div class="travel-check-icon">
+                    <form action="#">
+                        <input type="text" name="check_out" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
+                    </form>
+                </div><!-- /.travel-check-icon -->
+            </div><!--/.single-tab-select-box-->
+        </div><!--/.col-->
+
+        <div class="col-lg-2 col-md-1 col-sm-4">
+            
+                <h2>total amount</h2>
+                
+               
+                    <input type="text" name="total_amount">
+                    
+                <!-- /.travel-select-icon -->
+            <!--/.single-tab-select-box-->
+        </div><!--/.col-->
+
+        <div class="col-lg-2 col-md-1 col-sm-4">
+            <div class="single-tab-select-box">
+                <h2>Number of Room</h2>
+                <div class="travel-select-icon">
+                    <select class="form-control ">
+
+                        <option value="default">1</option><!-- /.option-->
+
+                        <option value="2">2</option><!-- /.option-->
+
+                        <option value="4">4</option><!-- /.option-->
+                        <option value="8">8</option><!-- /.option-->
+
+                    </select><!-- /.select-->
+                </div><!-- /.travel-select-icon -->
+            </div><!--/.single-tab-select-box-->
+        </div><!--/.col-->
+    </div>
+
+
+<div class="col-lg-2 col-md-1 col-sm-4">
+            
+                <h2>user id</h2>
+               
+                    <input type="text" name="user_id">
+                    
+                <!-- /.travel-select-icon -->
+            <!--/.single-tab-select-box-->
+</div>
+
+
+
+<div class="col-lg-2 col-md-1 col-sm-4">
+            
+                <h2>hotel id</h2>
+               
+                    <input type="text" name="hotel_id">
+                    
+                <!-- /.travel-select-icon -->
+            <!--/.single-tab-select-box-->
+        </div><br><br><br><br>
+=======
+>>>>>>> e02d61366750411de52cce209f6b0e42a388e910
 
 
 
