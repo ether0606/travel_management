@@ -42,7 +42,7 @@ if(!isset($_SESSION['log_user_status']) && $_SESSION['log_user_status']!==true){
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>TripTasy!</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -53,7 +53,7 @@ if(!isset($_SESSION['log_user_status']) && $_SESSION['log_user_status']!==true){
                 <img src="images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
+                <span>Welcome</span>
                 <h2><?= $_SESSION['user']->full_name ?></h2>
               </div>
             </div>
