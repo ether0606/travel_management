@@ -72,13 +72,19 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-sm-2">
+							<div class="logo_img">
+								<img src="assets/images/logo/logo5.png " alt="...">
+								</div>
+								</div>
+
+						<div class="col-sm-2">
 							<div class="logo">
 								<a href="<?= $mysqli->base_url ?>">
-									tour<span>Nest</span>
+									Trip<span>Tasy</span>
 								</a>
 							</div><!-- /.logo-->
 						</div><!-- /.col-->
-						<div class="col-sm-10">
+						<div class="col-sm-8">
 							<div class="main-menu">
 							
 								<!-- Brand and toggle get grouped for better mobile display -->
@@ -93,7 +99,6 @@
 										<li class="smooth-menu"><a href="#gallery">Destination</a></li>
 										<li class="smooth-menu"><a href="#pack">Packages </a></li>
 										<li class="smooth-menu"><a href="#spo">Special Offers</a></li>
-										<li class="smooth-menu"><a href="#blog">blog</a></li>
 										<li class="smooth-menu"><a href="#subs">subscription</a></li>
 										<li>
 											<button class="book-btn">book now

@@ -81,25 +81,30 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">enter your destination country</option><!-- /.option-->
+															  	<option value="default">enter your destination</option><!-- /.option-->
 
-															  	<option value="turkey">turkey</option><!-- /.option-->
-
-															  	<option value="russia">russia</option><!-- /.option-->
-															  	<option value="egept">egypt</option><!-- /.option-->
+															  	<?php 
+																	$locations = $mysqli->common_select("location", "id, name");
+																	
+																	foreach ($locations['data'] as $location) : ?>
+																		<option value="<?= $location->id ?>"><?= $location->name ?></option>
+																<?php endforeach; ?>
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
 
+
 														<div class="travel-select-icon">
 															<select class="form-control ">
+																<option value="default">enter your package</option><!-- /.option-->
 
-															  	<option value="default">enter your destination location</option><!-- /.option-->
+															  	<?php 
+																	$locations = $mysqli->common_select("tour_packages", "id, title");
+																	
+																	foreach ($tour_packages['data'] as $tour_packages) : ?>
+																		<option value="<?= $tour_packages->id ?>"><?= $tour_packages->title ?></option>
+																<?php endforeach; ?>
 
-															  	<option value="istambul">istambul</option><!-- /.option-->
-
-															  	<option value="mosko">mosko</option><!-- /.option-->
-															  	<option value="cairo">cairo</option><!-- /.option-->
 
 															</select><!-- /.select-->
 														</div><!-- /.travel-select-icon -->
@@ -217,7 +222,7 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">enter your destination country</option><!-- /.option-->
+															  	<option value="default">enter your destination</option><!-- /.option-->
 
 															  	<?php 
 																	$locations = $mysqli->common_select("location", "id, name");
@@ -547,6 +552,9 @@
 						<div class="gallery-content">
 						  	<div class="filtr-container">
 						  		<div class="row">
+
+
+								
 
 						  			<div class="col-md-6">
 						  				<div class="filtr-item">
@@ -980,101 +988,6 @@
 		</section><!--/.special-offer end-->
 		<!--special-offer end-->
 
-		<!--blog start-->
-		<section id="blog" class="blog">
-			<div class="container">
-				<div class="blog-details">
-						<div class="gallary-header text-center">
-							<h2>
-								latest news
-							</h2>
-							<p>
-								Travel News from all over the world 
-							</p>
-						</div><!--/.gallery-header-->
-						<div class="blog-content">
-							<div class="row">
-
-								<div class="col-sm-4 col-md-4">
-									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
-										<div class="thumbnail-img">
-											<img src="assets/images/blog/b1.jpg" alt="blog-img">
-											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-										
-										</div><!--/.thumbnail-img-->
-									  
-										<div class="caption">
-											<div class="blog-txt">
-												<h3>
-													<a href="#">
-														Discover on beautiful weather, Fantastic foods and historical place in Prag
-													</a>
-												</h3>
-												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-												</p>
-												<a href="#">Read More</a>
-											</div><!--/.blog-txt-->
-										</div><!--/.caption-->
-									</div><!--/.thumbnail-->
-
-								</div><!--/.col-->
-
-								<div class="col-sm-4 col-md-4">
-									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
-										<div class="thumbnail-img">
-											<img src="assets/images/blog/b2.jpg" alt="blog-img">
-											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-										
-										</div><!--/.thumbnail-img-->
-										<div class="caption">
-											<div class="blog-txt">
-												<h3>
-													<a href="#">
-														Discover on beautiful weather, Fantastic foods and historical place in india
-													</a>
-												</h3>
-												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-												</p>
-												<a href="#">Read More</a>
-											</div><!--/.blog-txt-->
-										</div><!--/.caption-->
-									</div><!--/.thumbnail-->
-
-								</div><!--/.col-->
-
-								<div class="col-sm-4 col-md-4">
-									<div class="thumbnail">
-										<h2>trending news <span>15 november 2017</span></h2>
-										<div class="thumbnail-img">
-											<img src="assets/images/blog/b3.jpg" alt="blog-img">
-											<div class="thumbnail-img-overlay"></div><!--/.thumbnail-img-overlay-->
-										
-										</div><!--/.thumbnail-img-->
-										<div class="caption">
-											<div class="blog-txt">
-												<h3><a href="#">10 Most Natural place to Discover</a></h3>
-												<p>
-													Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam 
-												</p>
-												<a href="#">Read More</a>
-											</div><!--/.blog-txt-->
-										</div><!--/.caption-->
-									</div><!--/.thumbnail-->
-
-								</div><!--/.col-->
-
-							</div><!--/.row-->
-						</div><!--/.blog-content-->
-					</div><!--/.blog-details-->
-				</div><!--/.container-->
-
-		</section><!--/.blog-->
-		<!--blog end-->
-
 		
 		<!--subscribe start-->
 		<section id="subs" class="subscribe">
@@ -1115,7 +1028,7 @@
 							<div class="single-footer-item">
 								<div class="footer-logo">
 									<a href="index.html">
-										tour<span>Nest</span>
+										Trip<span>Tasy</span>
 									</a>
 									<p>
 										best travel agency
@@ -1132,7 +1045,6 @@
 									<p><a href="#">destination</a></p>
 									<p><a href="#">spacial packages</a></p>
 									<p><a href="#">special offers</a></p>
-									<p><a href="#">blog</a></p>
 									<p><a href="#">contacts</a></p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
@@ -1143,11 +1055,12 @@
 							<div class="single-footer-item">
 								<h2>popular destination</h2>
 								<div class="single-footer-txt">
-									<p><a href="#">china</a></p>
-									<p><a href="#">venezuela</a></p>
-									<p><a href="#">brazil</a></p>
-									<p><a href="#">australia</a></p>
-									<p><a href="#">london</a></p>
+									<p><a href="#">coxsbazar</a></p>
+									<p><a href="#">rangamati</a></p>
+									<p><a href="#">bandarban</a></p>
+									<p><a href="#">sylhet</a></p>
+									<p><a href="#">khulna</a></p>
+									<p><a href="#">potuakhali</a></p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
 						</div><!--/.col-->
@@ -1158,8 +1071,8 @@
 								<div class="single-footer-txt text-left">
 									<p>+1 (300) 1234 6543</p>
 									<p class="foot-email"><a href="#">info@tnest.com</a></p>
-									<p>North Warnner Park 336/A</p>
-									<p>Newyork, USA</p>
+									<p>Azimnpur 336/A</p>
+									<p>Dhaka, Bangladesh</p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
 						</div><!--/.col-->
