@@ -68,6 +68,17 @@ if (!$res['error']) {
               <input type="date" name="booking_date" required class="form-control" value="<?= $booking->booking_date ?>">
             </div>
           </div>
+          <div class="item form-group">
+            <label for="booking_date" class="col-form-label col-md-3 col-sm-3 label-align">Booking Status</label>
+            <div class="col-md-6 col-sm-6 ">
+              <select name="booking_status" class="form-control">
+                <option value="1" <?= $booking->booking_status==1? "selected":"" ?>>Pending</option>
+                <option value="2" <?= $booking->booking_status==2? "selected":"" ?>>Approved</option>
+                <option value="3" <?= $booking->booking_status==3? "selected":"" ?>>Cancel</option>
+                <option value="4" <?= $booking->booking_status==4? "selected":"" ?>>Complete</option>
+              </select>
+            </div>
+          </div>
 
           <div class="ln_solid"></div>
           <div class="item form-group">
@@ -79,6 +90,13 @@ if (!$res['error']) {
 
         <?php
         if ($_POST) {
+          if($_POST['booking_status']==2){
+            $check=$mysqli->common_select('hotel_room', '*',['id'=>$booking->room_id]);
+            if (!$check['error']) {
+              $room_a['available_room']=$check['data'][0]->available_room - $_POST['number_of_room'];
+              $uproom = $mysqli->common_update('hotel_room', $room_a, ['id'=>$booking->room_id]);
+            }
+          }
           $res = $mysqli->common_update('hotel_bookings', $_POST, $where);
           if (!$res['error']) {
             echo "<script>location.href='hotel_bookings.php'</script>";

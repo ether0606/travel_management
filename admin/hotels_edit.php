@@ -14,7 +14,7 @@ if (!$hotel['error']) {
     <div class="col-md-12">
         <div class="x_panel">
             <div class="x_content">
-                <form method="post" class="form-horizontal form-label-left">
+                <form method="post" enctype="multipart/form-data" class="form-horizontal form-label-left">
                     <div class="form-group row">
                         <label class="col-md-3">Hotel Name</label>
                         <div class="col-md-6"><input type="text" name="name" value="<?= $hotel->name ?>" class="form-control"></div>
@@ -39,7 +39,7 @@ if (!$hotel['error']) {
                     </div>
                     <div class="form-group  row  ">
                         <label class="col-md-3">Image URL</label>
-                        <div class="col-md-6"><input type="text" name="image_url" value="<?= $hotel->image_url ?>" class="form-control"></div>
+                        <div class="col-md-6"><input type="file" name="image_url" value="<?= $hotel->image_url ?>" class="form-control"></div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-3">Rating</label>
@@ -54,6 +54,10 @@ if (!$hotel['error']) {
 
                 <?php
                 if ($_POST) {
+                    if($_FILES['image_url']['name']) {
+                        $image_url = $mysqli->upload_file($_FILES['image_url'], 'hotels');
+                        $_POST['image_url'] = $image_url['file_name'];
+                    }
                     $_POST['updated_at'] = date('Y-m-d H:i:s');
                     $_POST['updated_by'] = $_SESSION['user']->id;
                     $_POST['status'] = 1;

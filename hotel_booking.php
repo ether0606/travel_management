@@ -1,13 +1,5 @@
-<?php include_once('includes/header.php'); ?>
+<?php include_once('includes/header.php'); ?>     
 
-<?php
-$res = $mysqli->common_query("select hotel_bookings.*, user.name as user, hotel.name as hotel from hotel_bookings join user on hotel_bookings.user_id = user.id join hotel on hotel_bookings.hotel_id = hotel.id where hotel_bookings.status = 1 and hotel_bookings.id = '" . $_GET['id']."'");
-    
- if ($res['error'] == 0) {
-    $data = $res['data'][0];
-}
-?>       
-        
 <!--about-us start -->
 		<section id="home" class="about-us" style="background-image: url('<?= $mysqli->base_url ?>assets/images/pexels-asman-chema-91897-594077.jpg');">
 			<div class="container">
@@ -16,10 +8,7 @@ $res = $mysqli->common_query("select hotel_bookings.*, user.name as user, hotel.
 						<div class="col-sm-12">
 							<div class="single-about-us">
 								<div class="about-us-txt">
-                                    
-									<h2>
-									Hotel Reservation Service
-									</h2>
+									<h2>Hotel Reservation Service</h2>
                                     <p style="color:#FFF"></p>
 									<div class="about-btn">
 										<a href="#book_form"  class="about-view">Book Now</a>
@@ -29,7 +18,6 @@ $res = $mysqli->common_query("select hotel_bookings.*, user.name as user, hotel.
 						</div><!--/.col-->
 						<div class="col-sm-0">
 							<div class="single-about-us">
-								
 							</div><!--/.single-about-us-->
 						</div><!--/.col-->
 					</div><!--/.row-->
@@ -44,361 +32,56 @@ $res = $mysqli->common_query("select hotel_bookings.*, user.name as user, hotel.
 		<section id="pack" class="packages">
 			<div class="container">
 				<div class="gallary-header text-center">
-					<h2>
-						places to stay
-					</h2>
-					<p>
-						Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  
-					</p>
+					<h2>places to stay</h2>
+					<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  </p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
 					<div class="row">
-
+						<?php
+							$res = $mysqli->common_query("select * from hotels where hotels.status = 1 and hotels.location_id = '" . $_GET['location_id']."'");
+								
+							if ($res['error'] == 0) {
+								foreach($res['data'] as $d){
+						?>
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="assets/images/packages/p1.jpg" alt="package-place">
+								<img src="<?= $baseurl ?>admin/assets/images/hotels/<?= $d->image_url ?>" alt="package-place">
 								<div class="single-package-item-txt">
-									<h3>Cox's bazar <span class="pull-right">$499</span></h3>
+									<h3><?= $d->name ?> </h3>
 									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 3 Days 2 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i> food facilities
-										 </p>
+										<p><?= $d->description ?></p>
 									</div><!--/.packages-para-->
 									<div class="packages-review">
 										<p>
+											<?php for($i=0; $i<$d->rating; $i++){ ?>
 											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>254 reviews</span>
+											<?php } ?>
 										</p>
 									</div><!--/.packages-review-->
 									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
+										<a href="hotel_book_now.php?hotel_id=<?= $d->id ?>" class="about-view packages-btn">book now</a>
 									</div><!--/.about-btn-->
 								</div><!--/.single-package-item-txt-->
 							</div><!--/.single-package-item-->
 
 						</div><!--/.col-->
+						<?php }}else{?>  
 
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="assets/images/packages/p2.jpg" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>england <span class="pull-right">$1499</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 6 Days 7 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  Free food 
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>344 reviews</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
+						<?php } ?>  
 						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="assets/images/packages/p3.jpg" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>france <span class="pull-right">$1199</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 Days 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>544 reviews</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
 
-						</div><!--/.col-->
 						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="assets/images/packages/p4.jpg" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>india <span class="pull-right">$799</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 4 Days 5 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>625 reviews</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="assets/images/packages/p5.jpg" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>spain <span class="pull-right">$999</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 4 Days 4 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>379 reviews</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
-						
-						<div class="col-md-4 col-sm-6">
-							<div class="single-package-item">
-								<img src="assets/images/packages/p6.jpg" alt="package-place">
-								<div class="single-package-item-txt">
-									<h3>thailand <span class="pull-right">$799</span></h3>
-									<div class="packages-para">
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i> 5 Days 6 nights
-											</span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
-										</p>
-										<p>
-											<span>
-												<i class="fa fa-angle-right"></i>  transportation
-											</span>
-											<i class="fa fa-angle-right"></i>  food facilities
-										 </p>
-									</div><!--/.packages-para-->
-									<div class="packages-review">
-										<p>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<i class="fa fa-star"></i>
-											<span>447 reviews</span>
-										</p>
-									</div><!--/.packages-review-->
-									<div class="about-btn">
-										<button  class="about-view packages-btn">
-											book now
-										</button>
-									</div><!--/.about-btn-->
-								</div><!--/.single-package-item-txt-->
-							</div><!--/.single-package-item-->
-
-						</div><!--/.col-->
 
 					</div><!--/.row-->
 				</div><!--/.packages-content-->
 			</div><!--/.container-->
 
-<<<<<<< HEAD
-                        <option value="chattogram">Chattogram</option><!-- /.option-->
-                        <option value="coxbazar">Cox's Bazar</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                        </div><!-- /.travel-select-icon -->
-
-                    </div><!--/.single-tab-select-box-->
-                </div><!--/.col-->
-
-
-
-    <div class="col-lg-2 col-md-3 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>booking date</h2>
-                <div class="travel-check-icon">
-                    <form action="#">
-                        <input type="text" name="booking_date" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
-                    </form>
-                </div><!-- /.travel-check-icon -->
-            </div><!--/.single-tab-select-box-->
-    </div>
-=======
 		</section><!--/.packages-->
 		<!--packages end-->
->>>>>>> e02d61366750411de52cce209f6b0e42a388e910
 
 
 
 
-<<<<<<< HEAD
-        <div class="col-lg-2 col-md-3 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>check in</h2>
-                <div class="travel-check-icon">
-                    <form action="#">
-                        <input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
-                    </form>
-                </div><!-- /.travel-check-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-        <div class="col-lg-2 col-md-3 col-sm-1">
-            <div class="single-tab-select-box">
-                <h2>check out</h2>
-                <div class="travel-check-icon">
-                    <form action="#">
-                        <input type="text" name="check_out" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
-                    </form>
-                </div><!-- /.travel-check-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-        <div class="col-lg-2 col-md-1 col-sm-4">
-            
-                <h2>total amount</h2>
-                
-               
-                    <input type="text" name="total_amount">
-                    
-                <!-- /.travel-select-icon -->
-            <!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-        <div class="col-lg-2 col-md-1 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>Number of Room</h2>
-                <div class="travel-select-icon">
-                    <select class="form-control ">
-
-                        <option value="default">1</option><!-- /.option-->
-
-                        <option value="2">2</option><!-- /.option-->
-
-                        <option value="4">4</option><!-- /.option-->
-                        <option value="8">8</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-    </div>
-
-
-<div class="col-lg-2 col-md-1 col-sm-4">
-            
-                <h2>user id</h2>
-               
-                    <input type="text" name="user_id">
-                    
-                <!-- /.travel-select-icon -->
-            <!--/.single-tab-select-box-->
-</div>
-
-
-
-<div class="col-lg-2 col-md-1 col-sm-4">
-            
-                <h2>hotel id</h2>
-               
-                    <input type="text" name="hotel_id">
-                    
-                <!-- /.travel-select-icon -->
-            <!--/.single-tab-select-box-->
-        </div><br><br><br><br>
-=======
->>>>>>> e02d61366750411de52cce209f6b0e42a388e910
 
 
 

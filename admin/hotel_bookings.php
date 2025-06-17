@@ -34,6 +34,7 @@
               </thead>
               <tbody>
                 <?php
+                $status=['','Pending','Approved','Cancel','Complete'];
                 $res = $mysqli->common_select('hotel_bookings');
                 if (!$res['error']) {
                   foreach ($res['data'] as $i => $d) {
@@ -47,7 +48,7 @@
                   <td><?= $d->number_of_room ?></td>
                   <td><?= $d->total_amount ?></td>
                   <td><?= $d->booking_date ?></td>
-                  <td><?= $d->status ? "Active" : "Inactive" ?></td>
+                  <td><?= $status[$d->booking_status] ?></td>
                   <td>
                     <a href="hotel_bookings_edit.php?id=<?= $d->id ?>" class="btn btn-primary">Edit</a>
                     <a href="hotel_bookings_delete.php?id=<?= $d->id ?>" class="btn btn-danger">Delete</a>

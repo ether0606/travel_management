@@ -1,0 +1,3 @@
+ALTER TABLE `hotel_bookings` ADD `room_id` INT NULL AFTER `booking_date`;
+ALTER TABLE `hotel_bookings` ADD `booking_status` INT NULL COMMENT '1 pending 2 approved 3 cancel 4 complete' AFTER `room_id`;
+ALTER TABLE `hotel_bookings` CHANGE `check_in_date` `check_in_date` DATE NOT NULL, CHANGE `check_out_date` `check_out_date` DATE NOT NULL;
