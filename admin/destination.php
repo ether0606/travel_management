@@ -39,16 +39,10 @@
                 ?>
                   <tr>
                     <td><?= ++$i; ?></td>
-                    <td><?= htmlspecialchars($d->name) ?></td>
-                    <td><?= htmlspecialchars($d->country) ?></td>
-                    <td><?= htmlspecialchars(substr($d->description, 0, 50)) ?>...</td>
-                    <td>
-                      <?php if ($d->image_url) : ?>
-                        <img src="<?= htmlspecialchars($d->image_url) ?>" alt="<?= htmlspecialchars($d->name) ?>" style="max-width: 100px;">
-                      <?php else : ?>
-                        No Image
-                      <?php endif; ?>
-                    </td>
+                    <td><?= $d->name ?></td>
+                    <td><?= $d->country ?></td>
+                    <td><?= $d->description ?></td>
+                     <td><img src="<?= $base_url ?>admin/assets/images/destination/<?= $d->image_url ?>" width="50"></td>
                     <td><?= $d->status ? "Active" : "Inactive" ?></td>
                     <td>
                       <a href="destination_edit.php?id=<?= $d->id ?>" class="btn btn-primary btn-sm">Edit</a>

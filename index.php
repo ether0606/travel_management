@@ -91,21 +91,7 @@
 													</div><!-- /.travel-select-icon -->
 
 
-													<div class="travel-select-icon">
-														<select class="form-control ">
-															<option value="default">enter your package</option><!-- /.option-->
-
-															<?php 
-																$locations = $mysqli->common_select("tour_packages", "id, title");
-																
-																foreach ($tour_packages['data'] as $tour_packages) : ?>
-																	<option value="<?= $tour_packages->id ?>"><?= $tour_packages->title ?></option>
-															<?php endforeach; ?>
-
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-
+													
 												</div><!--/.single-tab-select-box-->
 											</div><!--/.col-->
 
@@ -497,72 +483,72 @@
 
 								<div class="col-md-6">
 									<div class="filtr-item">
-										<img src="assets/images/gallary/g1.jpg" alt="portfolio image"/>
+										<img src="admin/assets/images/destination/Coxs-Bazar-Sea-Beach.jpg" height= "555" width="312"alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
-												china
+												Cox's Bazar
 											</a>
-											<p><span>20 tours</span><span>15 places</span></p>
+		
 										</div><!-- /.item-title -->
 									</div><!-- /.filtr-item -->
 								</div><!-- /.col -->
 
 								<div class="col-md-6">
 									<div class="filtr-item">
-										<img src="assets/images/gallary/g2.jpg" alt="portfolio image"/>
+										<img src="admin/assets/images/destination/sylhet.jpg"height= "555" width="312" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
-												venuzuala
+												Sylhet
 											</a>
-											<p><span>12 tours</span><span>9 places</span></p>
+											
 										</div> <!-- /.item-title-->
 									</div><!-- /.filtr-item -->
 								</div><!-- /.col -->
 
 								<div class="col-md-4">
 									<div class="filtr-item">
-										<img src="assets/images/gallary/g3.jpg" alt="portfolio image"/>
+										<img src="admin/assets/images/destination/bandarban.jpg" height= "360" width="652" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
-												brazil
+												Bandarban
 											</a>
-											<p><span>25 tours</span><span>10 places</span></p>
+											
 										</div><!-- /.item-title -->
 									</div><!-- /.filtr-item -->
 								</div><!-- /.col -->
 
 								<div class="col-md-4">
 									<div class="filtr-item">
-										<img src="assets/images/gallary/g4.jpg" alt="portfolio image"/>
+										<img src="admin/assets/images/destination/potuakhali.jpg"height= "360" width="311" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
-												australia 
+												
 											</a>
-											<p><span>18 tours</span><span>9 places</span></p>
+											
 										</div> <!-- /.item-title-->
 									</div><!-- /.filtr-item -->
 								</div><!-- /.col -->
 
 								<div class="col-md-4">
 									<div class="filtr-item">
-										<img src="assets/images/gallary/g5.jpg" alt="portfolio image"/>
+										<img src="admin/assets/images/destination/rangamati.jpg"height= "360" width="311" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
-												netharlands
+												Rangamati
 											</a>
-											<p><span>14 tours</span><span>12 places</span></p>
+											
 										</div> <!-- /.item-title-->
 									</div><!-- /.filtr-item -->
 								</div><!-- /.col -->
 
 								<div class="col-md-8">
 									<div class="filtr-item">
-										<img src="assets/images/gallary/g6.jpg" alt="portfolio image"/>
+										<img src="admin/assets/images/destination/sundarban.jpg"height= "750" width="312" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
-												turkey
+												Sundarban
 											</a>
-											<p><span>14 tours</span><span>6 places</span></p>
+											
 										</div> <!-- /.item-title-->
 									</div><!-- /.filtr-item -->
 								</div><!-- /.col -->
@@ -629,7 +615,6 @@
 					clients reviews
 				</h2>
 				<p>
-					Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla. 
 				</p>
 
 			</div><!--/.gallery-header-->
@@ -911,7 +896,7 @@
 					<div class="col-sm-4">
 						<div class="single-special-offer">
 							<div class="single-special-offer-bg">
-								<img src="assets/images/offer/offer-shape.png" alt="offer-shape">
+								<img src="admin/assets/images/tour_packages/coxs.jpg" alt="offer-shape">
 							</div><!--/.single-special-offer-bg-->
 							<div class="single-special-shape-txt">
 								<h3>special offer</h3>
@@ -928,33 +913,6 @@
 	<!--special-offer end-->
 
 	
-	<!--subscribe start-->
-	<section id="subs" class="subscribe">
-		<div class="container">
-			<div class="subscribe-title text-center">
-				<h2>
-					Join our Subscribers List to Get Regular Update
-				</h2>
-				<p>
-					Subscribe Now. We will send you Best offer for your Trip 
-				</p>
-			</div>
-			<form>
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
-						<div class="custom-input-group">
-							<input type="email" class="form-control" placeholder="Enter your Email Here">
-							<button class="appsLand-btn subscribe-btn">Subscribe</button>
-							<div class="clearfix"></div>
-							<i class="fa fa-envelope"></i>
-						</div>
 
-					</div>
-				</div>
-			</form>
-		</div>
-
-	</section>
-	<!--subscribe end-->
 
 <?php include_once('includes/footer.php'); ?>

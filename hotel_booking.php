@@ -10,9 +10,7 @@
 								<div class="about-us-txt">
 									<h2>Hotel Reservation Service</h2>
                                     <p style="color:#FFF"></p>
-									<div class="about-btn">
-										<a href="#book_form"  class="about-view">Book Now</a>
-									</div><!--/.about-btn-->
+									
 								</div><!--/.about-us-txt-->
 							</div><!--/.single-about-us-->
 						</div><!--/.col-->

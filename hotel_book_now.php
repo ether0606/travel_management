@@ -16,9 +16,7 @@
 								<div class="about-us-txt">
 									<h2><?= $hotel_data->name ?></h2>
                                     <p style="color:#FFF"></p>
-									<div class="about-btn">
-										<a href="#book_form"  class="about-view">Book Now</a>
-									</div><!--/.about-btn-->
+									
 								</div><!--/.about-us-txt-->
 							</div><!--/.single-about-us-->
 						</div><!--/.col-->
@@ -39,7 +37,7 @@
 			<div class="container">
 				<div class="gallary-header text-center">
 					<h2>places to stay</h2>
-					<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  </p>
+					<p></p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
 						<?php
