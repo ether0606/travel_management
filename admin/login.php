@@ -36,7 +36,7 @@
             <form method="post" action="">
               <h1>Login Form</h1>
               <div>
-                <input type="text" name="email" class="form-control" placeholder="Username" required="" />
+                <input type="text" name="email" class="form-control" placeholder="Email" required="" />
               </div>
               <div>
                 <input type="password" name="password" class="form-control" placeholder="Password" required="" />

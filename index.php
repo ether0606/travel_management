@@ -522,6 +522,7 @@
 										<img src="admin/assets/images/destination/potuakhali.jpg"height= "360" width="311" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
+												potuakhali
 												
 											</a>
 											
@@ -843,7 +844,7 @@
 					<div class="col-sm-8">
 						<div class="single-special-offer">
 							<div class="single-special-offer-txt">
-								<h2>thiland</h2>
+								<h2>Rangamati</h2>
 								<div class="packages-review special-offer-review">
 									<p>
 										<i class="fa fa-star"></i>
@@ -857,13 +858,13 @@
 								<div class="packages-para special-offer-para">
 									<p>
 										<span>
-											<i class="fa fa-angle-right"></i> 5 Days 6 nights
+											<i class="fa fa-angle-right"></i> 3 Days 2 nights
 										</span>
 										<span>
 											<i class="fa fa-angle-right"></i> 2 person
 										</span>
 										<span>
-											<i class="fa fa-angle-right"></i>  5 star accomodation
+											<i class="fa fa-angle-right"></i>  3 star accomodation
 										</span>
 									</p>
 									<p>
@@ -875,7 +876,7 @@
 										</span>  
 									</p>
 									<p class="offer-para">
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tem ut labore et dolore magna  aliqua. Ut enim ad minim veniam, quis nostrud exercitation una <br> ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+										
 									</p>
 								</div><!--/.packages-para-->
 								<div class="offer-btn-group">
@@ -901,7 +902,7 @@
 							<div class="single-special-shape-txt">
 								<h3>special offer</h3>
 								<h4><span>40%</span><br>off</h4>
-								<p><span>$999</span><br>reguler $ 1450</p>
+								<p><span>3000</span><br>reguler 5000</p>
 							</div><!--/.single-special-shape-txt-->
 						</div><!--/.single-special-offer-->
 					</div><!--/.col-->
