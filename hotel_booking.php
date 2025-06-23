@@ -98,7 +98,7 @@
 														<div class="travel-select-icon">
 															<select class="form-control ">
 
-															  	<option value="default">Select your destination </option><!-- /.option-->
+															  	<option value="default">Select your location </option><!-- /.option-->
 
 															  	<?php 
 																	$locations = $mysqli->common_select("location", "id, name");
