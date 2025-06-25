@@ -522,7 +522,7 @@
 										<img src="admin/assets/images/destination/potuakhali.jpg"height= "360" width="311" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
-												potuakhali
+												Patuakhali
 												
 											</a>
 											
@@ -532,7 +532,7 @@
 
 								<div class="col-md-4">
 									<div class="filtr-item">
-										<img src="admin/assets/images/destination/rangamati.jpg"height= "360" width="311" alt="portfolio image"/>
+										<img src="admin/assets/images/destination/Rangamati.jpg"height= "360" width="311" alt="portfolio image"/>
 										<div class="item-title">
 											<a href="#">
 												Rangamati
