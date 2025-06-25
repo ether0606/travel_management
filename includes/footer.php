@@ -9,7 +9,7 @@
 							<div class="single-footer-item">
 								<div class="footer-logo">
 									<a href="index.html">
-										tour<span>Nest</span>
+										Trip<span>Tasy</span>
 									</a>
 									<p>
 										best travel agency
@@ -38,10 +38,10 @@
 								<div class="single-footer-txt">
 									<p><a href="#">Cox's bazar</a></p>
 									<p><a href="#">Bandarban</a></p>
-									<p><a href="#">sylhet</a></p>
+									<p><a href="#">Sylhet</a></p>
 									<p><a href="#">Khulna</a></p>
 									<p><a href="#">Rangamati</a></p>
-									<p><a href="#">Potuakhali</a></p>
+									<p><a href="#">Patuakhali</a></p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
 						</div><!--/.col-->
