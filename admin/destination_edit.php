@@ -42,13 +42,9 @@ if (!$res['error']) {
           </div>
 
           <div class="item form-group">
-            <label for="image_url" class="col-form-label col-md-3 col-sm-3 label-align">Image</label>
+             <label class="col-form-label col-md-3 col-sm-3 label-align" for="image_url">Image URL</label>
             <div class="col-md-6 col-sm-6 ">
-              <?php if ($destination->image_url) : ?>
-                <img src="<?= htmlspecialchars($destination->image_url) ?>" alt="Current Image" style="max-width: 150px; display:block; margin-bottom:10px;">
-              <?php endif; ?>
-              <input type="file" id="image_url" name="image_url" accept="image/*" class="form-control">
-              <small>Leave blank to keep existing image.</small>
+              <input type="file" id="image_url" name="image_url" class="form-control">
             </div>
           </div>
 
@@ -60,30 +56,17 @@ if (!$res['error']) {
           </div>
         </form>
 
-        <?php
+       <?php
+        
         if ($_POST) {
-          // Handle image upload if a new image is selected
-          if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] == UPLOAD_ERR_OK) {
-            $uploadDir = 'uploads/destinations/';
-            if (!is_dir($uploadDir)) {
-              mkdir($uploadDir, 0755, true);
-            }
-            $filename = time() . '_' . basename($_FILES['image_url']['name']);
-            $targetFile = $uploadDir . $filename;
-            if (move_uploaded_file($_FILES['image_url']['tmp_name'], $targetFile)) {
-              $_POST['image_url'] = $targetFile;
-            } else {
-              echo "<div class='alert alert-danger'>Failed to upload image.</div>";
-            }
-          } else {
-            // keep existing image if no new upload
-            $_POST['image_url'] = $destination->image_url;
+          if($_FILES['image_url']['name']) {
+            $image_url = $mysqli->upload_file($_FILES['image_url'], 'destination');
+            $_POST['image_url'] = $image_url['file_name'];
           }
-
+          
           $_POST['updated_at'] = date('Y-m-d H:i:s');
           $_POST['updated_by'] = $_SESSION['user']->id;
           $_POST['status'] = 1;
-
           $res = $mysqli->common_update('destination', $_POST, $where);
           if (!$res['error']) {
             echo "<script>location.href='destination.php'</script>";
@@ -97,4 +80,4 @@ if (!$res['error']) {
   </div>
 </div>
 
-<?php include_once('include/footer.php'); ?>
+<?php include_once('include/footer.php'); ?> 

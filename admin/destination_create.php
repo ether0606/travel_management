@@ -46,33 +46,21 @@
             </div>
           </div>
         </form>
-
-        <?php
+<?php
         if ($_POST) {
-          // Handle image upload
-          $imagePath = null;
-          if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] == UPLOAD_ERR_OK) {
-            $uploadDir = 'uploads/destinations/';
-            if (!is_dir($uploadDir)) {
-              mkdir($uploadDir, 0755, true);
-            }
-            $filename = time() . '_' . basename($_FILES['image_url']['name']);
-            $targetFile = $uploadDir . $filename;
-            if (move_uploaded_file($_FILES['image_url']['tmp_name'], $targetFile)) {
-              $imagePath = $targetFile;
-            } else {
-              echo "<div class='alert alert-danger'>Failed to upload image.</div>";
-            }
-          }
 
-          $_POST['image_url'] = $imagePath;
+          if($_FILES['image_url']['name']) {
+            $image_url = $mysqli->upload_file($_FILES['image_url'], 'destination');
+            $_POST['image_url'] = $image_url['file_name'];
+          }
+         
           $_POST['created_at'] = date('Y-m-d H:i:s');
           $_POST['created_by'] = $_SESSION['user']->id;
           $_POST['status'] = 1;
 
           $res = $mysqli->common_insert('destination', $_POST);
           if (!$res['error']) {
-            echo "<script>location.href='destination.php'</script>";
+            echo "<script>location.href='" . $baseurl . "destination.php'</script>";
           } else {
             echo "<div class='alert alert-danger'>" . $res['error_msg'] . "</div>";
           }
@@ -82,4 +70,5 @@
     </div>
   </div>
 </div>
+        
 <?php include_once('include/footer.php'); ?>

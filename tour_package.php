@@ -7,7 +7,7 @@
         $data=$res['data'][0];
     }
 ?>
-<!--about-us start -->
+        <!--about-us start -->
 		<section id="home" class="about-us" style="background-image: url(<?= $mysqli->base_url ?>admin/assets/images/tour_packages/<?= $data->image_url ?>);">
 			<div class="container">
 				<div class="about-us-content">
@@ -25,9 +25,23 @@
 								</div><!--/.about-us-txt-->
 							</div><!--/.single-about-us-->
 						</div><!--/.col-->
-						<div class="col-sm-0">
-							<div class="single-about-us">
-								
+						<div class="col-sm-6">
+							<div class="single-about-us " style="padding-top: 20px;color:#FFF">
+								<table class="table table-bordered">
+                                    <tr>
+                                        <td>Journey Start</td>
+                                        <td><?= $data->start_date ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Journey finish</td>
+                                        <td><?= $data->end_date ?></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Duration Day</td>
+                                        <td><?= $data->duration_day ?></td>
+                                    </tr>
+
+                                </table>
 							</div><!--/.single-about-us-->
 						</div><!--/.col-->
 					</div><!--/.row-->
@@ -37,6 +51,7 @@
 		</section><!--/.about-us-->
 		<!--about-us end -->
 
+ sharmin
 
 <div class="container mt-6" id="book_form">
     <div class="row" style="margin-top: 100px;">
@@ -118,3 +133,74 @@
 
 
 
+
+    <form action="" method="post">
+        <div class="container mt-5" id="book_form">
+            <div class="row" style="margin-top: 100px;">
+                <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                    <div class="single-tab-select-box">
+                        <h2>Name</h2>
+                        <div class="travel-text-icon">
+                            <input type="text" name="name" class="form-control" placeholder="enter your name">
+                        </div><!-- /.travel-text-icon -->
+                    </div><!--/.single-tab-text-box-->
+                </div>     
+
+                <div class="col-lg-4 col-md-3 col-sm-4">
+                    <div class="single-tab-select-box">
+                        <h2>Email</h2>
+                        <div class="travel-text-icon travel-envelope-icon">
+                            <input type="text" name="email" class="form-control"  placeholder="enter your Email address">
+                        </div><!-- /.travel-check-icon -->
+                    </div><!--/.single-tab-select-box-->
+                </div>
+                <div class="col-lg-4 col-md-3 col-sm-4">
+                    <div class="single-tab-select-box">
+                        <h2>Password</h2>
+                        <div class="travel-text-icon travel-password-icon">
+                            <input type="text" name="password" class="form-control"  placeholder="enter your Email address">
+                        </div><!-- /.travel-check-icon -->
+                    </div><!--/.single-tab-select-box-->
+                </div>
+               
+                <div class="col-lg-2 col-md-1 col-sm-4">
+                    <div class="single-tab-select-box">
+                        <h2>quantity</h2>
+                        <div class="travel-select-icon">
+                            <select class="form-control" onchange="total_price(this.value)">
+                                <option value="1">1</option><!-- /.option-->
+                                <option value="2">2</option><!-- /.option-->
+                                <option value="4">4</option><!-- /.option-->
+                                <option value="8">8</option><!-- /.option-->
+                            </select><!-- /.select-->
+                        </div><!-- /.travel-select-icon -->
+                    </div><!--/.single-tab-select-box-->
+                </div><!--/.col-->
+                <div class="col-lg-2 col-md-1 col-sm-4">
+                    <div class="single-tab-select-box">
+                        <h2>Total</h2>
+                        <div class="total-price">
+                            <?= $data->price ?>
+                        </div><!-- /.travel-select-icon -->
+                    </div><!--/.single-tab-select-box-->
+                </div><!--/.col-->
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 p-5"> 
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+<?php include_once('includes/footer.php'); ?>
+
+<script>
+    function total_price(qty){
+        var price = <?= $data->price ?>;
+        var total = qty * price;
+        document.getElementsByClassName('total-price')[0].innerHTML = total
+    }
+</script>
+ master

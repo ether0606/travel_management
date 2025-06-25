@@ -26,9 +26,9 @@
           </div>
 
           <div class="item form-group">
-            <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination">Destination <span class="required">*</span></label>
+            <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination_id">Destination <span class="required">*</span></label>
             <div class="col-md-6 col-sm-6 ">
-              <select id="destination" name="destination" required="required" class="form-control">
+              <select id="destination_id" name="destination_id" required="required" class="form-control">
                 <option value="">Select Destination</option>
                 <?php
                 $destinations = $mysqli->common_select('destination');
@@ -95,10 +95,9 @@
 
           if($_FILES['image_url']['name']) {
             $image_url = $mysqli->upload_file($_FILES['image_url'], 'tour_packages');
-            unset($_POST['image_url']);
+            $_POST['image_url'] = $image_url['file_name'];
           }
-          print_r($image_url);
-          die();
+         
           $_POST['created_at'] = date('Y-m-d H:i:s');
           $_POST['created_by'] = $_SESSION['user']->id;
           $_POST['status'] = 1;

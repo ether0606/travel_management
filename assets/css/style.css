@@ -490,15 +490,59 @@ html,body{
     padding: 10px 8px;
 }/*travel-select-icon*/
 
-.travel-select-icon  select,.travel-check-icon  input {
+.travel-select-icon  select,.travel-check-icon  input,.travel-text-icon  input {
 	color:#aaa;
 	font-size:14px;
 	font-family: 'Poppins', sans-serif;
 	text-transform: capitalize;
 	height: 48px;
 }/*select*/
-
-.travel-select-icon .form-control,.travel-check-icon .form-control{
+.travel-text-icon{
+	position:relative;
+}
+.travel-text-icon:after{
+	position: absolute;
+    content: "\f007";
+    right: 0px;
+    top: 0;
+    font-size: 18px;
+    color: #aaa;
+    background: #f9f9f9;
+    font-family: "fontAwesome";
+    pointer-events: none;
+    border:1px solid #d7d7d7;
+    border-bottom: transparent;
+    padding: 10px;
+}
+.travel-envelope-icon:after{
+	position: absolute;
+    content: "\f003";
+    right: 0px;
+    top: 0;
+    font-size: 18px;
+    color: #aaa;
+    background: #f9f9f9;
+    font-family: "fontAwesome";
+    pointer-events: none;
+    border:1px solid #d7d7d7;
+    border-bottom: transparent;
+    padding: 10px;
+}
+.travel-password-icon:after{
+	position: absolute;
+    content: "\f21b";
+    right: 0px;
+    top: 0;
+    font-size: 18px;
+    color: #aaa;
+    background: #f9f9f9;
+    font-family: "fontAwesome";
+    pointer-events: none;
+    border:1px solid #d7d7d7;
+    border-bottom: transparent;
+    padding: 10px;
+}
+.travel-select-icon .form-control,.travel-check-icon .form-control,.travel-text-icon .form-control{
 	-webkit-appearance:none;
 	-moz-appearance:none;
 	-o-appearance:none;
@@ -1557,3 +1601,6 @@ html,body{
 
 
 /*========================Thank you=================*/
+.header-area{
+background: rgba(0,0,0,0.5)
+}

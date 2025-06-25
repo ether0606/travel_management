@@ -2,7 +2,7 @@
 <?php include_once('include/topbar.php'); ?>
 
 <h1>Add Hotel</h1>
-<form method="post" class="form-horizontal form-label-left">
+<form method="post" enctype="multipart/form-data" class="form-horizontal form-label-left">
     <div class="form-group row">
         <label class="col-md-3 col-form-label">Hotel Name</label>
         <div class="col-md-6">
@@ -13,7 +13,15 @@
     <div class="form-group row">
         <label class="col-md-3 col-form-label">Location ID</label>
         <div class="col-md-6">
-            <input type="number" name="location_id" class="form-control">
+            <select name="location_id" id="location_id" class="form-control">
+                <option value="">Select Location</option>
+                <?php 
+                $locations = $mysqli->common_select("location", "id, name");
+                
+                foreach ($locations['data'] as $location) : ?>
+                    <option value="<?= $location->id ?>"><?= $location->name ?></option>
+                <?php endforeach; ?>
+            </select>
         </div>
     </div>
 
@@ -27,7 +35,7 @@
     <div class="form-group row">
         <label class="col-md-3 col-form-label">Image URL</label>
         <div class="col-md-6">
-            <input type="text" name="image_url" class="form-control">
+            <input type="file" name="image_url" class="form-control">
         </div>
     </div>
 
@@ -46,6 +54,10 @@
 </form>
                 <?php
                 if ($_POST) {
+                    if($_FILES['image_url']['name']) {
+                        $image_url = $mysqli->upload_file($_FILES['image_url'], 'tour_packages');
+                        $_POST['image_url'] = $image_url['file_name'];
+                    }
                     $_POST['created_at'] = date('Y-m-d H:i:s');
                     $_POST['created_by'] = $_SESSION['user']->id;
                     $_POST['status'] = 1;

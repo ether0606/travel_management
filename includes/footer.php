@@ -26,7 +26,6 @@
 									<p><a href="#">destination</a></p>
 									<p><a href="#">spacial packages</a></p>
 									<p><a href="#">special offers</a></p>
-									<p><a href="#">blog</a></p>
 									<p><a href="#">contacts</a></p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
@@ -37,11 +36,12 @@
 							<div class="single-footer-item">
 								<h2>popular destination</h2>
 								<div class="single-footer-txt">
-									<p><a href="#">china</a></p>
-									<p><a href="#">venezuela</a></p>
-									<p><a href="#">brazil</a></p>
-									<p><a href="#">australia</a></p>
-									<p><a href="#">london</a></p>
+									<p><a href="#">Cox's bazar</a></p>
+									<p><a href="#">Bandarban</a></p>
+									<p><a href="#">sylhet</a></p>
+									<p><a href="#">Khulna</a></p>
+									<p><a href="#">Rangamati</a></p>
+									<p><a href="#">Potuakhali</a></p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
 						</div><!--/.col-->
@@ -51,9 +51,9 @@
 								<h2 class="text-left">contacts</h2>
 								<div class="single-footer-txt text-left">
 									<p>+1 (300) 1234 6543</p>
-									<p class="foot-email"><a href="#">info@tnest.com</a></p>
-									<p>North Warnner Park 336/A</p>
-									<p>Newyork, USA</p>
+									<p class="foot-email"><a href="#">triptasy@gmail.com</a></p>
+									<p>Khulsi 336/A</p>
+									<p>Chattogram,Bangladesh</p>
 								</div><!--/.single-footer-txt-->
 							</div><!--/.single-footer-item-->
 						</div><!--/.col-->

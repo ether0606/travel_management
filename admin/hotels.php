@@ -44,7 +44,7 @@
                                         <td><?= $d->name ?></td>
                                         <td><?= $d->location_id ?></td>
                                         <td><?= $d->description ?></td>
-                                        <td><img src="<?= $d->image_url ?>" width="50"></td>
+                                        <td><img src="<?= $base_url ?>admin/assets/images/hotels/<?= $d->image_url ?>" width="50"></td>
                                         <td><?= $d->rating ?></td>
                                         <td><?= $d->status ? "Active" : "Inactive" ?></td>
                                         <td>
