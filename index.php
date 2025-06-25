@@ -625,21 +625,21 @@
 				<div class="home1-testm item">
 					<div class="home1-testm-single text-center">
 						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial1.jpg" alt="img"/>
+							<img src="admin/assets/images/clientr/kl.jpg" alt="img"/>
 						</div><!--/.home1-testm-img-->
 						<div class="home1-testm-txt">
 							<span class="icon section-icon">
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 							</span>
 							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+							Excellent customer service, personalized itineraries, seamless booking processes, and knowledgeable guides 
 							</p>
 							<h3>
 								<a href="#">
-									kevin watson
+									Safia Nur Nazia
 								</a>
 							</h3>
-							<h4>london, england</h4>
+							<h4>Dhaka, Bangladesh</h4>
 						</div><!--/.home1-testm-txt-->	
 					</div><!--/.home1-testm-single-->
 
@@ -648,21 +648,23 @@
 				<div class="home1-testm item">
 					<div class="home1-testm-single text-center">
 						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial2.jpg" alt="img"/>
+							<img src="admin/assets/images/clientr/gh.jpg" alt="img"/>
 						</div><!--/.home1-testm-img-->
 						<div class="home1-testm-txt">
 							<span class="icon section-icon">
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 							</span>
 							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+							"The travel agent really listened to what we wanted and curated a unique experience that suited our budget and preferences. Felt like a VIP the whole trip!"
+
+
 							</p>
 							<h3>
 								<a href="#">
-									kevin watson
+									Nispal Sen
 								</a>
 							</h3>
-							<h4>london, england</h4>
+							<h4>Chattogram, Bangladesh</h4>
 						</div><!--/.home1-testm-txt-->	
 					</div><!--/.home1-testm-single-->
 
@@ -671,21 +673,22 @@
 				<div class="home1-testm item">
 					<div class="home1-testm-single text-center">
 						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial1.jpg" alt="img"/>
+							<img src="admin/assets/images/clientr/ij.jpg" alt="img"/>
 						</div><!--/.home1-testm-img-->
 						<div class="home1-testm-txt">
 							<span class="icon section-icon">
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 							</span>
 							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+							The destination was beautiful, but I felt like some of the hotel options were below what was promised. Communication was a bit slow too. Not a bad trip, but could be better."
+
 							</p>
 							<h3>
 								<a href="#">
-									kevin watson
+									Jerin Afroz
 								</a>
 							</h3>
-							<h4>london, england</h4>
+							<h4>Khulna,Bangladesh </h4>
 						</div><!--/.home1-testm-txt-->	
 					</div><!--/.home1-testm-single-->
 
@@ -694,21 +697,21 @@
 				<div class="home1-testm item">
 					<div class="home1-testm-single text-center">
 						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial1.jpg" alt="img"/>
+							<img src="admin/assets/images/clientr/ab.jpg" alt="img"/>
 						</div><!--/.home1-testm-img-->
 						<div class="home1-testm-txt">
 							<span class="icon section-icon">
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 							</span>
 							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+							"Everything was seamless—from the booking process to the actual vacation. Great recommendations and no surprise fees. I’m already planning my next trip with them." 
 							</p>
 							<h3>
 								<a href="#">
-									kevin watson
+									Sharuz Kabir
 								</a>
 							</h3>
-							<h4>london, england</h4>
+							<h4>Dhaka, Bangladesh</h4>
 						</div><!--/.home1-testm-txt-->	
 					</div><!--/.home1-testm-single-->
 
@@ -717,113 +720,23 @@
 				<div class="home1-testm item">
 					<div class="home1-testm-single text-center">
 						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial2.jpg" alt="img"/>
+							<img src="admin/assets/images/clientr/ahad reza.jpg" alt="img"/>
 						</div><!--/.home1-testm-img-->
 						<div class="home1-testm-txt">
 							<span class="icon section-icon">
 								<i class="fa fa-quote-left" aria-hidden="true"></i>
 							</span>
 							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
+							"Flights were delayed (not their fault), but the agency didn’t provide much help. Also, our hotel wasn’t what we expected. I won’t be using them again."
+
+
 							</p>
 							<h3>
 								<a href="#">
-									kevin watson
+									Turan Ahmed
 								</a>
 							</h3>
-							<h4>london, england</h4>
-						</div><!--/.home1-testm-txt-->	
-					</div><!--/.home1-testm-single-->
-
-				</div><!--/.item-->
-
-				<div class="home1-testm item">
-					<div class="home1-testm-single text-center">
-						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial1.jpg" alt="img"/>
-						</div><!--/.home1-testm-img-->
-						<div class="home1-testm-txt">
-							<span class="icon section-icon">
-								<i class="fa fa-quote-left" aria-hidden="true"></i>
-							</span>
-							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-							</p>
-							<h3>
-								<a href="#">
-									kevin watson
-								</a>
-							</h3>
-							<h4>london, england</h4>
-						</div><!--/.home1-testm-txt-->	
-					</div><!--/.home1-testm-single-->
-
-				</div><!--/.item-->
-
-				<div class="home1-testm item">
-					<div class="home1-testm-single text-center">
-						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial1.jpg" alt="img"/>
-						</div><!--/.home1-testm-img-->
-						<div class="home1-testm-txt">
-							<span class="icon section-icon">
-								<i class="fa fa-quote-left" aria-hidden="true"></i>
-							</span>
-							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-							</p>
-							<h3>
-								<a href="#">
-									kevin watson
-								</a>
-							</h3>
-							<h4>london, england</h4>
-						</div><!--/.home1-testm-txt-->	
-					</div><!--/.home1-testm-single-->
-
-				</div><!--/.item-->
-
-				<div class="home1-testm item">
-					<div class="home1-testm-single text-center">
-						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial2.jpg" alt="img"/>
-						</div><!--/.home1-testm-img-->
-						<div class="home1-testm-txt">
-							<span class="icon section-icon">
-								<i class="fa fa-quote-left" aria-hidden="true"></i>
-							</span>
-							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-							</p>
-							<h3>
-								<a href="#">
-									kevin watson
-								</a>
-							</h3>
-							<h4>london, england</h4>
-						</div><!--/.home1-testm-txt-->	
-					</div><!--/.home1-testm-single-->
-
-				</div><!--/.item-->
-
-				<div class="home1-testm item">
-					<div class="home1-testm-single text-center">
-						<div class="home1-testm-img">
-							<img src="assets/images/client/testimonial1.jpg" alt="img"/>
-						</div><!--/.home1-testm-img-->
-						<div class="home1-testm-txt">
-							<span class="icon section-icon">
-								<i class="fa fa-quote-left" aria-hidden="true"></i>
-							</span>
-							<p>
-								Lorem ipsum dolor sit amet, contur adip elit, sed do mod incid ut labore et dolore magna aliqua. Ut enim ad minim veniam. 
-							</p>
-							<h3>
-								<a href="#">
-									kevin watson
-								</a>
-							</h3>
-							<h4>london, england</h4>
+							<h4>Cox's Bazar, Bangladesh</h4>
 						</div><!--/.home1-testm-txt-->	
 					</div><!--/.home1-testm-single-->
 
