@@ -40,6 +40,10 @@
                                         <td>Duration Day</td>
                                         <td><?= $data->duration_day ?></td>
                                     </tr>
+                                    <tr>
+                                        <td>Price</td>
+                                        <td><?= $data->price ?></td>
+                                    </tr>
 
                                 </table>
 							</div><!--/.single-about-us-->
