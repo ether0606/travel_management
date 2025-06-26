@@ -55,8 +55,6 @@
 		</section><!--/.about-us-->
 		<!--about-us end -->
 
- sharmin
-
 <div class="container mt-6" id="book_form">
     <div class="row" style="margin-top: 100px;">
         
