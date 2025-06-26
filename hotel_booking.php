@@ -64,120 +64,13 @@
 
 						</div><!--/.col-->
 						<?php }}else{?>  
-
+								<h3>No Hotel found under this location </h3>
 						<?php } ?>  
-						
-
-						
-
 					</div><!--/.row-->
 				</div><!--/.packages-content-->
 			</div><!--/.container-->
 
 		</section><!--/.packages-->
 		<!--packages end-->
-
-
-
-
-
-
-
-
-
-<!--hotel Booking form start-->
-<div role="tabpanel" class="tab-pane fade in" id="hotels">
-										<div class="tab-para">
-
-											<div class="row">
-												<div class="col-lg-4 col-md-4 col-sm-12">
-													<div class="single-tab-select-box">
-
-														<h2>destination</h2>
-
-														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">Select your location </option><!-- /.option-->
-
-															  	<?php 
-																	$locations = $mysqli->common_select("location", "id, name");
-																	
-																	foreach ($locations['data'] as $location) : ?>
-																		<option value="<?= $location->id ?>"><?= $location->name ?></option>
-																<?php endforeach; ?>
-
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
-
-														
-
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-												<div class="col-lg-2 col-md-3 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>check in</h2>
-														<div class="travel-check-icon">
-															<form action="#">
-																<input type="text" name="check_in" class="form-control" data-toggle="datepicker" placeholder="12 -01 - 2017 ">
-															</form>
-														</div><!-- /.travel-check-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-												<div class="col-lg-2 col-md-3 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>check out</h2>
-														<div class="travel-check-icon">
-															<form action="#">
-																<input type="text" name="check_out" class="form-control"  data-toggle="datepicker" placeholder="22 -01 - 2017 ">
-															</form>
-														</div><!-- /.travel-check-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-												
-
-												<div class="col-lg-2 col-md-1 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>members</h2>
-														<div class="travel-select-icon">
-															<select class="form-control ">
-
-															  	<option value="default">1</option><!-- /.option-->
-
-															  	<option value="2">2</option><!-- /.option-->
-
-															  	<option value="4">4</option><!-- /.option-->
-															  	<option value="8">8</option><!-- /.option-->
-
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-											</div><!--/.row-->
-
-											<div class="row">
-												<div class="col-sm-5"></div><!--/.col-->
-												<div class="clo-sm-7">
-													<div class="about-btn travel-mrt-0 pull-right">
-														<button  class="about-view travel-btn">
-															search	
-														</button><!--/.travel-btn-->
-													</div><!--/.about-btn-->
-												</div><!--/.col-->
-
-											</div><!--/.row-->
-
-										</div><!--/.tab-para-->
-
-									</div><!--/.tabpannel-->
-
-
-<!--hotel Booking form end-->
-
-
 
 <?php include_once('includes/footer.php'); ?>
