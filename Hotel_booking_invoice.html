@@ -3,10 +3,95 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>flight_booking_invoice</title>
+    <title>hotel_booking_invoice</title>
+    <style>
+        body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: rgb(238, 247, 249);
+    
+    color: #333;
+    margin: auto;
+    
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #2c3e50;
+}
+
+
+img {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+}
+
+th {
+    background-color: #f0f0f0;
+    font-weight: 600;
+    padding: 12px;
+    text-align: left;
+}
+
+td {
+    padding: 10px;
+}
+
+tr:nth-child(even) td {
+    background-color: #fafafa;
+}
+
+ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+p, b {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+strong {
+    display: block;
+    margin-top: 5px;
+}
+
+@media print {
+    body {
+        background: none;
+        margin: 0;
+    }
+
+    div {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    table, th, td {
+        font-size: 13px;
+    }
+}
+
+
+    </style>
 </head>
 <body>
-    <h1 text align="center">Air Ticket Invoice</h1>
+    <h1 text align="center">Hotel Booking Invoice</h1>
 <div>
     <img src="admin/assets/images/logo/logo2.png" height="20px" width="20px"alt="logo2">
     <strong>TripTasy</strong>
@@ -95,7 +180,7 @@
     <p>
         <b>Terms and Conditions:</b>
         <br>
-        All sales are final. Refunds will be processed according to airline policies. Payments are due within 30 days of the invoice date.
+        All sales are final. Refunds will be processed according to hotel policies. Payments are due within 30 days of the invoice date.
     </p>
     <p>
         For any questions or further assistance, feel free to reach out to 
