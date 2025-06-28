@@ -8,7 +8,9 @@
 							<div class="single-about-us">
 								<div class="about-us-txt">
 									<h2 class="text-center">Thanks You for booking. we will contact ASP to confirm your booking</h2>
-                                   
+									<div class="about-btn">
+										<a href="hotel_booking_invoice.php?id=<?= $_GET['id']?>"  class="about-view">Print Invoice</a>
+									</div><!--/.about-btn-->
 								</div><!--/.about-us-txt-->
 							</div><!--/.single-about-us-->
 						</div><!--/.col-->

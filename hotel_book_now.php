@@ -189,7 +189,7 @@
 
 												$res = $mysqli->common_insert('hotel_bookings', $bookings);
 												if (!$res['error']) {
-													echo "<script>location.href='thanks.php'</script>";
+													echo "<script>location.href='thanks.php?id=".$res['data']."'</script>";
 												} else {
 													echo $res['error_msg'];
 												}

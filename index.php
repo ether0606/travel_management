@@ -42,13 +42,6 @@
 							<ul class="nav nav-tabs" role="tablist">
 
 								<li role="presentation" class="active">
-									<a href="#tours" aria-controls="tours" role="tab" data-toggle="tab">
-										<i class="fa fa-tree"></i>
-										tours
-									</a>
-								</li>
-
-								<li role="presentation">
 									<a href="#hotels" aria-controls="hotels" role="tab" data-toggle="tab">
 										<i class="fa fa-building"></i>
 										hotels
@@ -65,94 +58,44 @@
 
 							<!-- Tab panes -->
 							<div class="tab-content">
-
-								
-								<div role="tabpanel" class="tab-pane fade in" id="tour_packages">
-									<form method="get" action="tour_booking.php">
-									<div class="tab-para">
-
-
-										<div class="row">
-											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="single-tab-select-box">
-
-													<h2>destination</h2>
-
-													<div class="travel-select-icon">
-														<select class="form-control ">
-
-															<option value="default">enter your destination</option><!-- /.option-->
-
-															<?php 
-																$locations = $mysqli->common_select("location", "id, name");
-																
-																foreach ($locations['data'] as $location) : ?>
-																	<option value="<?= $location->id ?>"><?= $location->name ?></option>
-															<?php endforeach; ?>
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-
-
-													
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-
-											
-											<div class="clo-sm-7">
-												<div class="about-btn travel-mrt-0 pull-right">
-													<button type="submit" class="about-view travel-btn">
-														search	
-													</button><!--/.travel-btn-->
-													
-												</div><!--/.about-btn-->
-											</div><!--/.col-->
-
-										</div><!--/.row-->
-
-									</div><!--/.tab-para-->
-
-								</div><!--/.tabpannel-->
-
-								<div role="tabpanel" class="tab-pane fade in" id="hotels">
+								<div role="tabpanel" class="tab-pane fade in active" id="hotels">
 									<form method="get" action="hotel_booking.php">
-									<div class="tab-para">
+										<div class="tab-para">
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-12">
+													<div class="single-tab-select-box">
 
-										<div class="row">
-											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="single-tab-select-box">
+														<h2>destination</h2>
 
-													<h2>destination</h2>
+														<div class="travel-select-icon">
+															<select class="form-control" name="location_id">
+																<option value="default">enter your destination</option><!-- /.option-->
+																<?php 
+																	$locations = $mysqli->common_select("location", "id, name");
+																	foreach ($locations['data'] as $location) : ?>
+																		<option value="<?= $location->id ?>"><?= $location->name ?></option>
+																<?php endforeach; ?>
 
-													<div class="travel-select-icon">
-														<select class="form-control" name="location_id">
-															<option value="default">enter your destination</option><!-- /.option-->
-															<?php 
-																$locations = $mysqli->common_select("location", "id, name");
-																foreach ($locations['data'] as $location) : ?>
-																	<option value="<?= $location->id ?>"><?= $location->name ?></option>
-															<?php endforeach; ?>
+															</select><!-- /.select-->
+														</div><!-- /.travel-select-icon -->
 
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
+													</div><!--/.single-tab-select-box-->
+												</div><!--/.col-->
+											</div><!--/.row-->
 
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-										</div><!--/.row-->
+											<div class="row">
+												<div class="col-sm-5"></div><!--/.col-->
+												<div class="clo-sm-7">
+													<div class="about-btn travel-mrt-0 pull-right">
+														<button type="submit" class="about-view travel-btn">
+															search	
+														</button><!--/.travel-btn-->
+													</div><!--/.about-btn-->
+												</div><!--/.col-->
 
-										<div class="row">
-											<div class="col-sm-5"></div><!--/.col-->
-											<div class="clo-sm-7">
-												<div class="about-btn travel-mrt-0 pull-right">
-													<button type="submit" class="about-view travel-btn">
-														search	
-													</button><!--/.travel-btn-->
-												</div><!--/.about-btn-->
-											</div><!--/.col-->
+											</div><!--/.row-->
 
-										</div><!--/.row-->
-
-									</div><!--/.tab-para-->
+										</div><!--/.tab-para-->
 									</form>
 								</div><!--/.tabpannel-->
 
