@@ -55,6 +55,7 @@
 		</section><!--/.about-us-->
 		<!--about-us end -->
 
+
 <div class="container mt-6" id="book_form">
     <div class="row" style="margin-top: 100px;">
         
@@ -124,7 +125,6 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
     
-
     
 
 
@@ -158,9 +158,9 @@
                 </div>
                 <div class="col-lg-4 col-md-3 col-sm-4">
                     <div class="single-tab-select-box">
-                        <h2>Password</h2>
+                        <h2>Contact</h2>
                         <div class="travel-text-icon travel-password-icon">
-                            <input type="text" name="password" class="form-control"  placeholder="enter your Email address">
+                            <input type="text" name="contact" class="form-control"  placeholder="enter your Email address">
                         </div><!-- /.travel-check-icon -->
                     </div><!--/.single-tab-select-box-->
                 </div>
@@ -205,4 +205,3 @@
         document.getElementsByClassName('total-price')[0].innerHTML = total
     }
 </script>
- master

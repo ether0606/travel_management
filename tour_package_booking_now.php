@@ -36,7 +36,7 @@
 		<section id="pack" class="packages">
 			<div class="container">
 				<div class="gallary-header text-center">
-					<h2>places to stay</h2>
+					<h2></h2>
 					<p></p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
@@ -92,6 +92,91 @@
 											</div><!--/.row-->
 
 										</form>
+										<?php
+											if (isset($_POST["submit{$d->id}"])) {
+												/* this is for check if user is available or not*/
+												if($_POST['user_id']==""){
+													$user['full_name']=$_POST['full_name'];
+													$user['email']=$_POST['email'];
+													$user['contact']=$_POST['contact'];
+													$user['created_at'] = date('Y-m-d H:i:s');
+													$user['created_by'] = 1;
+													$user['status'] = 1;
+													$user['password'] = sha1('123456');
+													
+													$check=$mysqli->common_select('user', '*',['email'=>$user['email']]);
+													
+													if($check['error']){
+														$res = $mysqli->common_insert('user', $user);
+														if (!$res['error']) {
+															$user_id=$res['data'];
+														} else {
+															echo $res['error_msg'];
+														}
+													}else{
+														$user_id=$res['data'][0]->id;
+													}
+
+												}else{
+													$user_id=$_POST['user_id'];
+												}
+												
+												$bookings['user_id']=$user_id;
+												$bookings['tour_id']=$_GET['hotel_id'];
+												$bookings['start_date']=date('Y-m-d',strtotime($_POST['start_date']));
+												$bookings['end_date']=date('Y-m-d',strtotime($_POST['end_date']));
+												$bookings['qty']=$_POST['qty'];
+
+												$check_out_date=date_create($bookings['check_out_date']);
+												$check_in_date=date_create($bookings['check_in_date']);
+												$diff=date_diff($check_out_date,$check_in_date);
+												$total_days=$diff->format("%a");
+
+												$bookings['total_amount']=$d->price_per_night * $_POST['number_of_room'] * $total_days;
+												$bookings['booking_date']=date('Y-m-d H:i:s');
+												
+												$bookings['status']=1;
+												$bookings['booking_status']=1;
+												$bookings['created_at'] = date('Y-m-d H:i:s');
+												$bookings['created_by'] = $user_id;
+
+												$res = $mysqli->common_insert('hotel_bookings', $bookings);
+												if (!$res['error']) {
+													echo "<script>location.href='thanks.php?id=".$res['data']."'</script>";
+												} else {
+													echo $res['error_msg'];
+												}
+											}
+										?>
+									</div>
+								</div>
+							</div><!--/.row-->
+						<?php }}else{?>  
+
+						<?php } ?>  
+						
+
+						
+
+				</div><!--/.packages-content-->
+			</div><!--/.container-->
+
+		</section><!--/.packages-->
+		<!--packages end-->
+
+
+<!--hotel Booking form end-->
+
+
+
+<?php include_once('includes/footer.php'); ?>
+<script>
+	function show_form(id){
+		$('.booking-form').hide('slowly');
+		$('.booking-form'+id).show('slowly');
+	}
+	$('.booking-form').hide();
+</script>
 										
 
 <?php include_once('includes/footer.php'); ?>
