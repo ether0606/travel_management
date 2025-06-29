@@ -56,87 +56,7 @@
 		<!--about-us end -->
 
 
-<div class="container mt-6" id="book_form">
-    <div class="row" style="margin-top: 100px;">
-        
-         <div class="col-lg-2 col-md-3 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>name</h2>
-                <div class="travel-check-icon">
-                    <form action="#"> 
-                        <input type="text" name="name" id ="name" class="form-control"  placeholder="enter your name">
-                    </form>
-                </div><!-- /.travel-check-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-
-         <div class="col-lg-2 col-md-3 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>Email</h2>
-                <div class="travel-check-icon">
-                    <form action="#">
-                        <input type="email" name="email" id="email" class="form-control" data-toggle="" placeholder="enter your email">
-                    </form>
-                </div><!-- /.travel-check-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-         <div class="col-lg-2 col-md-3 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>Passowrd</h2>
-                <div class="travel-check-icon">
-                    <form action="#">
-                        <input type="password" name="password" id="password" class="form-control"  placeholder="XXXXXXXX">
-                    </form>
-                </div><!-- /.travel-check-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-        <div class="col-lg-2 col-md-3 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>booking_date</h2>
-                <div class="travel-check-icon">
-                    <form action="#">
-                        <input type="text" name="booking_date" id="booking date" class="form-control" data-toggle="datepicker" placeholder="00 -00 - 0000 ">
-                    </form>
-                </div><!-- /.travel-check-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-
-        <div class="col-lg-2 col-md-1 col-sm-4">
-            <div class="single-tab-select-box">
-                <h2>Quantity</h2>
-                <div class="travel-select-icon">
-                    <select class="form-control ">
-
-                        <option value="default">1</option><!-- /.option-->
-
-                        <option value="2">2</option><!-- /.option-->
-
-                        <option value="4">4</option><!-- /.option-->
-                        <option value="8">8</option><!-- /.option-->
-
-                    </select><!-- /.select-->
-                </div><!-- /.travel-select-icon -->
-            </div><!--/.single-tab-select-box-->
-        </div><!--/.col-->
-    </div>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-    
-    
-
-
-<?php include_once('includes/footer.php'); ?>
-
-
-
-
-
-
-
-    <form action="" method="post">
+  <form action="" method="post">
         <div class="container mt-5" id="book_form">
             <div class="row" style="margin-top: 100px;">
                 <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
@@ -205,3 +125,14 @@
         document.getElementsByClassName('total-price')[0].innerHTML = total
     }
 </script>
+
+
+<?php include_once('includes/footer.php'); ?>
+
+
+
+
+
+
+
+  
