@@ -165,7 +165,7 @@
 
 											<div class="col-lg-2 col-md-1 col-sm-4">
 												<div class="single-tab-select-box">
-													<h2>adults</h2>
+													<h2>traveller</h2>
 													<div class="travel-select-icon">
 														<select class="form-control ">
 
@@ -175,24 +175,6 @@
 
 															<option value="15">15</option><!-- /.option-->
 															<option value="20">20</option><!-- /.option-->
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-
-											<div class="col-lg-2 col-md-1 col-sm-4">
-												<div class="single-tab-select-box">
-													<h2>childs</h2>
-													<div class="travel-select-icon">
-														<select class="form-control ">
-
-															<option value="default">1</option><!-- /.option-->
-
-															<option value="2">2</option><!-- /.option-->
-
-															<option value="4">4</option><!-- /.option-->
-															<option value="8">8</option><!-- /.option-->
 
 														</select><!-- /.select-->
 													</div><!-- /.travel-select-icon -->
