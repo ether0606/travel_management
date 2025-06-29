@@ -127,12 +127,12 @@
 												$bookings['end_date']=date('Y-m-d',strtotime($_POST['end_date']));
 												$bookings['qty']=$_POST['qty'];
 
-												$check_out_date=date_create($bookings['check_out_date']);
-												$check_in_date=date_create($bookings['check_in_date']);
-												$diff=date_diff($check_out_date,$check_in_date);
+												$start_date=date_create($bookings['start_date']);
+												$end_date=date_create($bookings['end_date']);
+												$diff=date_diff($start_date,$end_date);
 												$total_days=$diff->format("%a");
 
-												$bookings['total_amount']=$d->price_per_night * $_POST['number_of_room'] * $total_days;
+												$bookings['total_amount']=$d->price * $_POST['qty'];
 												$bookings['booking_date']=date('Y-m-d H:i:s');
 												
 												$bookings['status']=1;
@@ -140,7 +140,7 @@
 												$bookings['created_at'] = date('Y-m-d H:i:s');
 												$bookings['created_by'] = $user_id;
 
-												$res = $mysqli->common_insert('hotel_bookings', $bookings);
+												$res = $mysqli->common_insert('tour_package_booking', $bookings);
 												if (!$res['error']) {
 													echo "<script>location.href='thanks.php?id=".$res['data']."'</script>";
 												} else {
