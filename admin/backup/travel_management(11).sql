@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2025 at 08:35 AM
+-- Generation Time: Jun 29, 2025 at 09:32 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -137,6 +137,32 @@ INSERT INTO `destination` (`id`, `name`, `country`, `description`, `image_url`, 
 (7, 'Coxs Bazar', 'Bangladesh', 'Known for having the longest natural sea beach in the world. It is a top tourist spot in Bangladesh where people go to enjoy the ocean and sunset.', 'uploads/destinations/1750043680_Coxs-Bazar-Sea-Beach.jpg', 0, '2025-06-03 06:58:28', '2025-06-16 05:17:37', 1, 1),
 (8, 'Patuakhali ', 'Bangladesh', 'Famous for Kuakata sea beach, where one can witness both sunrise and sunset from the same spot.', '17504809739451potuakhali.jpg', 1, '2025-06-15 06:45:18', '2025-06-21 06:42:53', 1, 1),
 (9, 'Cox Bazar', 'Bangladesh', 'Home to the worlds longest natural sea beach.Beyond its stunning beach, its also renowned for its unique cultural mix, fresh seafood, and vibrant tourist attractions like Himchori, Moheshkhali Island, and Buddhist temples. \r\n', '1750480933914517500438808013Coxs-Bazar-Sea-Beach.jpg', 1, '2025-06-16 05:21:23', '2025-06-21 06:42:13', 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `flight_booking`
+--
+
+CREATE TABLE `flight_booking` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `airline_id` int(11) NOT NULL,
+  `schedule_id` int(11) NOT NULL,
+  `deparature_date` datetime NOT NULL,
+  `return_date` datetime NOT NULL,
+  `num_of_seat` int(11) NOT NULL,
+  `flight_class` varchar(255) NOT NULL,
+  `booking_date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `booking_status` varchar(255) NOT NULL,
+  `trip_type` varchar(255) NOT NULL,
+  `total_amount` decimal(10,0) NOT NULL,
+  `status` int(11) NOT NULL,
+  `created_at` datetime NOT NULL,
+  `updated-_at` datetime NOT NULL,
+  `created_by` int(11) NOT NULL,
+  `updated_by` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -318,8 +344,8 @@ CREATE TABLE `review` (
 CREATE TABLE `route` (
   `id` int(11) NOT NULL,
   `route_type` varchar(255) NOT NULL,
-  `to_airport` int(11) NOT NULL,
-  `from_airport` int(11) NOT NULL,
+  `from_airport` varchar(255) NOT NULL,
+  `to_airport` varchar(255) NOT NULL,
   `trans_area` varchar(255) NOT NULL,
   `status` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
@@ -332,14 +358,14 @@ CREATE TABLE `route` (
 -- Dumping data for table `route`
 --
 
-INSERT INTO `route` (`id`, `route_type`, `to_airport`, `from_airport`, `trans_area`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(1, 'gtr', 2, 9, 'hgbtr', 0, '2025-06-02 07:48:47', '2025-06-02 08:01:52', 1, 1),
-(2, 'orgk', 245, 6325, 'fiouffgr', 0, '2025-06-02 07:59:36', '2025-06-03 06:58:26', 1, 1),
-(3, 'Domestic', 1, 3, 'Chattogram', 1, '2025-06-03 07:01:04', '2025-06-03 07:06:08', 1, 1),
-(4, 'Domestic', 2, 4, 'Chattogram', 1, '2025-06-03 07:02:19', '2025-06-03 07:05:59', 1, 1),
-(5, 'Domestic', 5, 1, 'Habiganj', 1, '2025-06-03 07:04:27', '2025-06-03 07:05:46', 1, 1),
-(6, 'Domestic', 3, 2, 'Chattogram', 1, '2025-06-03 07:06:32', '0000-00-00 00:00:00', 1, 0),
-(7, 'Domestic', 1, 4, 'Khulna', 1, '2025-06-03 07:07:01', '0000-00-00 00:00:00', 1, 0);
+INSERT INTO `route` (`id`, `route_type`, `from_airport`, `to_airport`, `trans_area`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
+(1, 'gtr', '2', '9', 'hgbtr', 0, '2025-06-02 07:48:47', '2025-06-02 08:01:52', 1, 1),
+(2, 'orgk', '245', '6325', 'fiouffgr', 0, '2025-06-02 07:59:36', '2025-06-03 06:58:26', 1, 1),
+(3, 'Domestic', '1', '3', 'Chattogram', 1, '2025-06-03 07:01:04', '2025-06-03 07:06:08', 1, 1),
+(4, 'Domestic', '2', '4', 'Chattogram', 1, '2025-06-03 07:02:19', '2025-06-03 07:05:59', 1, 1),
+(5, 'Domestic', '5', '1', 'Habiganj', 1, '2025-06-03 07:04:27', '2025-06-03 07:05:46', 1, 1),
+(6, 'Domestic', '3', '2', 'Chattogram', 1, '2025-06-03 07:06:32', '0000-00-00 00:00:00', 1, 0),
+(7, 'Domestic', '1', '4', 'Khulna', 1, '2025-06-03 07:07:01', '0000-00-00 00:00:00', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -351,8 +377,8 @@ CREATE TABLE `schedule` (
   `id` int(11) NOT NULL,
   `route_id` int(11) NOT NULL,
   `airline_id` int(11) NOT NULL,
-  `start_time_date` int(11) NOT NULL,
-  `end_time_date` int(11) NOT NULL,
+  `start_time_date` datetime NOT NULL,
+  `end_time_date` datetime NOT NULL,
   `status` int(11) NOT NULL,
   `created_at` int(11) NOT NULL,
   `updated_at` datetime NOT NULL,
@@ -365,42 +391,11 @@ CREATE TABLE `schedule` (
 --
 
 INSERT INTO `schedule` (`id`, `route_id`, `airline_id`, `start_time_date`, `end_time_date`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(1, 1, 1, 12, 1, 1, 2025, '2025-06-03 07:06:31', '0000-00-00 00:00:00', 1),
-(2, 2, 2, 2, 3, 1, 2025, '2025-06-03 07:04:04', '0000-00-00 00:00:00', 1),
-(3, 3, 3, 3, 4, 1, 2025, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-(4, 4, 4, 5, 6, 1, 2025, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
-(5, 5, 5, 7, 8, 1, 2025, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `seat`
---
-
-CREATE TABLE `seat` (
-  `id` int(11) NOT NULL,
-  `airline_id` int(11) NOT NULL,
-  `seat_type` varchar(255) NOT NULL,
-  `seat_number` int(11) NOT NULL,
-  `seat_row` int(11) NOT NULL,
-  `seat_column` int(11) NOT NULL,
-  `status` int(11) NOT NULL,
-  `created_at` datetime NOT NULL,
-  `updated_at` datetime NOT NULL,
-  `created_by` int(11) NOT NULL,
-  `updated_by` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `seat`
---
-
-INSERT INTO `seat` (`id`, `airline_id`, `seat_type`, `seat_number`, `seat_row`, `seat_column`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(8, 6, 'Economy Class', 2, 2, 2, 1, '2025-06-03 07:14:07', '0000-00-00 00:00:00', 1, 0),
-(9, 5, 'business', 3, 3, 3, 1, '2025-06-03 07:14:18', '0000-00-00 00:00:00', 1, 0),
-(10, 4, 'economy', 44, 4, 4, 1, '2025-06-03 07:14:38', '0000-00-00 00:00:00', 1, 0),
-(11, 3, 'business', 55, 5, 5, 1, '2025-06-03 07:14:55', '0000-00-00 00:00:00', 1, 0),
-(12, 2, 'First Class', 223, 6, 6, 1, '2025-06-03 07:15:32', '0000-00-00 00:00:00', 1, 0);
+(1, 1, 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 2025, '2025-06-03 07:06:31', '0000-00-00 00:00:00', 1),
+(2, 2, 2, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 2025, '2025-06-03 07:04:04', '0000-00-00 00:00:00', 1),
+(3, 3, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 2025, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(4, 4, 4, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 2025, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(5, 5, 5, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 1, 2025, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -411,7 +406,8 @@ INSERT INTO `seat` (`id`, `airline_id`, `seat_type`, `seat_number`, `seat_row`, 
 CREATE TABLE `seat_fare` (
   `id` int(11) NOT NULL,
   `schedule_id` int(11) NOT NULL,
-  `seat_id` int(11) NOT NULL,
+  `class_name` varchar(255) DEFAULT NULL,
+  `airline_id` int(11) DEFAULT NULL,
   `seat_fare` int(11) NOT NULL,
   `status` int(11) NOT NULL,
   `created_at` datetime NOT NULL,
@@ -424,12 +420,12 @@ CREATE TABLE `seat_fare` (
 -- Dumping data for table `seat_fare`
 --
 
-INSERT INTO `seat_fare` (`id`, `schedule_id`, `seat_id`, `seat_fare`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
-(3, 1, 1, 1, 1, '2025-06-03 07:16:53', '0000-00-00 00:00:00', 1, 0),
-(4, 2, 2, 2, 1, '2025-06-03 07:17:05', '0000-00-00 00:00:00', 1, 0),
-(5, 3, 3, 3, 1, '2025-06-03 07:17:10', '0000-00-00 00:00:00', 1, 0),
-(6, 4, 4, 4, 1, '2025-06-03 07:17:16', '0000-00-00 00:00:00', 1, 0),
-(7, 5, 5, 5, 1, '2025-06-03 07:17:21', '0000-00-00 00:00:00', 1, 0);
+INSERT INTO `seat_fare` (`id`, `schedule_id`, `class_name`, `airline_id`, `seat_fare`, `status`, `created_at`, `updated_at`, `created_by`, `updated_by`) VALUES
+(3, 1, NULL, NULL, 1, 1, '2025-06-03 07:16:53', '0000-00-00 00:00:00', 1, 0),
+(4, 2, NULL, NULL, 2, 1, '2025-06-03 07:17:05', '0000-00-00 00:00:00', 1, 0),
+(5, 3, NULL, NULL, 3, 1, '2025-06-03 07:17:10', '0000-00-00 00:00:00', 1, 0),
+(6, 4, NULL, NULL, 4, 1, '2025-06-03 07:17:16', '0000-00-00 00:00:00', 1, 0),
+(7, 5, NULL, NULL, 5, 1, '2025-06-03 07:17:21', '0000-00-00 00:00:00', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -500,6 +496,7 @@ CREATE TABLE `tour_package_booking` (
   `discount` decimal(10,2) NOT NULL,
   `total_amount` decimal(10,2) NOT NULL,
   `status` int(11) NOT NULL,
+  `booking_status` int(11) DEFAULT 0,
   `created_at` datetime NOT NULL,
   `updated_at` datetime NOT NULL,
   `created_by` int(11) NOT NULL,
@@ -566,6 +563,12 @@ ALTER TABLE `destination`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `flight_booking`
+--
+ALTER TABLE `flight_booking`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `hotels`
 --
 ALTER TABLE `hotels`
@@ -611,12 +614,6 @@ ALTER TABLE `route`
 -- Indexes for table `schedule`
 --
 ALTER TABLE `schedule`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `seat`
---
-ALTER TABLE `seat`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -678,6 +675,12 @@ ALTER TABLE `destination`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
+-- AUTO_INCREMENT for table `flight_booking`
+--
+ALTER TABLE `flight_booking`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `hotels`
 --
 ALTER TABLE `hotels`
@@ -724,12 +727,6 @@ ALTER TABLE `route`
 --
 ALTER TABLE `schedule`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `seat`
---
-ALTER TABLE `seat`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `seat_fare`

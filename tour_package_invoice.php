@@ -148,7 +148,7 @@
                     <th >Total</th>
             </tr>
             <tr>
-                <td >Room Accomodation</td>
+                <td >Package</td>
                 <td > <?= $data->number_of_room ?></td>
                 <td> <?= $data->price_per_night ?></td>
                 <td> <?= $data->total_amount ?></td>
