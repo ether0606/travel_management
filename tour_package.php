@@ -60,10 +60,11 @@
         <div class="container mt-5" id="book_form">
             <div class="row" style="margin-top: 100px;">
                 <div class="col-lg-4 col-md-4 col-sm-12 mt-5">
+                    <input type="hidden" name="user_id" id="">
                     <div class="single-tab-select-box">
                         <h2>Name</h2>
                         <div class="travel-text-icon">
-                            <input type="text" name="name" class="form-control" placeholder="enter your name">
+                            <input type="text" name="full_name" class="form-control" placeholder="enter your name">
                         </div><!-- /.travel-text-icon -->
                     </div><!--/.single-tab-text-box-->
                 </div>     
@@ -89,7 +90,7 @@
                     <div class="single-tab-select-box">
                         <h2>quantity</h2>
                         <div class="travel-select-icon">
-                            <select class="form-control" onchange="total_price(this.value)">
+                            <select name="qty" class="form-control" onchange="total_p(this.value)">
                                 <option value="1">1</option><!-- /.option-->
                                 <option value="2">2</option><!-- /.option-->
                                 <option value="4">4</option><!-- /.option-->
@@ -101,9 +102,11 @@
                 <div class="col-lg-2 col-md-1 col-sm-4">
                     <div class="single-tab-select-box">
                         <h2>Total</h2>
-                        <div class="total-price">
+                        <div class="total_price">
                             <?= $data->price ?>
-                        </div><!-- /.travel-select-icon -->
+                        </div>
+                        <input type="hidden" name="total_amount" id="total_price" value="<?= $data->price ?>">
+                        <!-- /.travel-select-icon -->
                     </div><!--/.single-tab-select-box-->
                 </div><!--/.col-->
             </div>
@@ -116,23 +119,62 @@
         </div>
     </form>
 
+    <?php
+        if ($_POST) {
+            /* this is for check if user is available or not*/
+            if($_POST['user_id']==""){
+                $user['full_name']=$_POST['full_name'];
+                $user['email']=$_POST['email'];
+                $user['contact']=$_POST['contact'];
+                $user['created_at'] = date('Y-m-d H:i:s');
+                $user['created_by'] = 1;
+                $user['status'] = 1;
+                $user['password'] = sha1('123456');
+                
+                $check=$mysqli->common_select('user', '*',['email'=>$user['email']]);
+                
+                if($check['error']){
+                    $res = $mysqli->common_insert('user', $user);
+                    if (!$res['error']) {
+                        $user_id=$res['data'];
+                    } else {
+                        echo $res['error_msg'];
+                    }
+                }else{
+                    $user_id=$res['data'][0]->id;
+                }
+
+            }else{
+                $user_id=$_POST['user_id'];
+            }
+            /* `user_id`, `tour_id`, `booking_date`, `qty`, `discount`, `total_amount`, `status` */
+            $bookings['user_id']=$user_id;
+            $bookings['tour_id']=$_GET['id'];
+            $bookings['booking_date']=date('Y-m-d');
+            $bookings['qty']=$_POST['qty'];
+            $bookings['total_amount']=$_POST['total_amount'];
+            $bookings['status']=1;
+            $bookings['booking_status']=1;
+            $bookings['created_at'] = date('Y-m-d H:i:s');
+            $bookings['created_by'] = $user_id;
+
+            $res = $mysqli->common_insert('tour_package_booking', $bookings);
+            if (!$res['error']) {
+                echo "<script>location.href='thanks.php?b=tour&id=".$res['data']."'</script>";
+            } else {
+                echo $res['error_msg'];
+            }
+        }
+    ?>
+
 <?php include_once('includes/footer.php'); ?>
 
 <script>
-    function total_price(qty){
-        var price = <?= $data->price ?>;
+    function total_p(qty){
+        
+        var price = parseInt(<?= $data->price ?>);
         var total = qty * price;
-        document.getElementsByClassName('total-price')[0].innerHTML = total
+        $('.total_price').text(total);
+        $('#total_price').val(total);
     }
 </script>
-
-
-<?php include_once('includes/footer.php'); ?>
-
-
-
-
-
-
-
-  
