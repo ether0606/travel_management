@@ -155,6 +155,8 @@
                 <td> <?= $data->price_per_night ?></td>
                 <td> <?= $data->total_amount ?></td>
             </tr>
+
+            
            
             <tr>
                 <th colspan="3">Subtotal</th>

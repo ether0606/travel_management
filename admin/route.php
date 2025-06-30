@@ -27,8 +27,8 @@
                           <th>#SL</th>
                           <th>Route type</th>
 
-                        <th>To Airport</th>
                         <th>From Airport</th>
+                        <th>To Airport</th>
                         <th>Trans Area</th>
                          
 
@@ -37,35 +37,44 @@
                         </tr>
                       </thead>
                       <tbody> 
-                        
-                      
- <?php
-                        $res = $mysqli->common_select('route');
-                        if (!$res['error']) {
-                              foreach ($res['data'] as $i => $d) {
-                        ?>
-                          <tr>
-                            <td><?= ++$i;?></td>
-                            <td><?= $d->route_type ?></td>
-                            <td><?= $d->to_airport ?></td>
-                            <td><?= $d->from_airport?></td>
-                            <td><?= $d->trans_area ?></td>
-                            
 
-                            <td><?= $d->status?"Active":"Inactive" ?></td>
-                            <td>
-                              <a href="route_edit.php?id=<?= $d->id ?>" class="btn btn-primary">Edit</a>
-                              <a href="route_delete.php?id=<?= $d->id ?>" class="btn btn-danger">Delete</a>
-                        </td>
-                        <?php } } ?>
-                      </tbody>
-                    </table>
+                    <tbody>
+                       <?php
+                     $res = $mysqli->common_query('select route.*, airport.name as from_airport,airport.name as to_airport,airport.name as trans_area
+                      from 
+                        route
+                      join airport as airport_name on route.airport_id = airport.id 
+                    
+                      where route.status = 1 order by route.id desc');
+                      if (!$res['error']) {
+                       foreach ($res['data'] as $i => $d) {
+                        ?>
+
+                              <tr>
+                                <td><?= ++$i; ?></td>
+                                <td><?= $d->route_type ?></td>
+                                <td><?= $d->from_airport ?></td>
+                                <td><?= $d->to_airport ?></td>
+                                <td><?= $d->trans_area ?></td>
+      
+                                <td><?= $d->status ? "Active" : "Inactive" ?></td>
+                                <td>
+                                  <a href="route_edit.php?id=<?= $d->id ?>" class="btn btn-primary btn-sm">Edit</a>
+                                  <a href="route_delete.php?id=<?= $d->id ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this destination?');">Delete</a>
+                                </td>
+                              </tr>
+                            <?php
+                              }
+                            }
+                            ?>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-                </div>
-              </div>    
 
-         
+                    
 <?php include_once('include/footer.php');?>

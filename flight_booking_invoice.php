@@ -103,10 +103,10 @@
 
 <?php
     $booking_id = $_GET['id'];
-    $res=$mysqli->common_query("SELECT hotel_bookings.*,user.full_name,user.contact,user.address, hotels.name as hotel_name, hotel_room.room_type,hotel_room.price_per_night FROM `hotel_bookings` 
-                                JOIN user on user.id=hotel_bookings.user_id
-                                JOIN hotels on hotels.id=hotel_bookings.hotel_id
-                                JOIN hotel_room on hotel_room.id=hotel_bookings.room_id where hotel_bookings.id='".$booking_id."'");
+    $res=$mysqli->common_query("SELECT flight_booking.*,user.full_name,user.contact,user.address, airline.id as airline_id, schedule.id as schedule_id,seat_fare.class as class_name,FROM `hotel_bookings` 
+                                JOIN user on user.id=flight_bookings.user_id
+                                JOIN schedule on schedule.id=flight_bookings.schedule_id
+                                JOIN seat_fare on seat_fare.class_name=flight_booking.flight_class where flight_bookings.id='".$booking_id."'");
 
     $data=$res['data'][0];
 ?>
@@ -148,12 +148,19 @@
                     <th >Total</th>
             </tr>
             <tr>
-                <td >Room Accomodation</td>
+                <td >Flight Fare</td>
                 <td > <?= $data->number_of_room ?></td>
                 <td> <?= $data->price_per_night ?></td>
                 <td> <?= $data->total_amount ?></td>
             </tr>
            
+            <tr>
+                <td >Service fee</td>
+                <td > <?= $data->number_of_room ?></td>
+                <td> <?= $data->price_per_night ?></td>
+                <td> <?= $data->total_amount ?></td>
+            </tr>
+
             <tr>
                 <th colspan="3">Subtotal</th>
                  <td><?= $data->total_amount ?></td>
