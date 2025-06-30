@@ -154,14 +154,14 @@
 													$check=$mysqli->common_select('user', '*',['email'=>$user['email']]);
 													
 													if($check['error']){
-														$res = $mysqli->common_insert('user', $user);
-														if (!$res['error']) {
-															$user_id=$res['data'];
+														$resh = $mysqli->common_insert('user', $user);
+														if (!$resh['error']) {
+															$user_id=$resh['data'];
 														} else {
-															echo $res['error_msg'];
+															echo $resh['error_msg'];
 														}
 													}else{
-														$user_id=$res['data'][0]->id;
+														$user_id=$check['data'][0]->id;
 													}
 
 												}else{
@@ -189,7 +189,7 @@
 
 												$res = $mysqli->common_insert('hotel_bookings', $bookings);
 												if (!$res['error']) {
-													echo "<script>location.href='thanks.php?id=".$res['data']."'</script>";
+													echo "<script>location.href='thanks.php?b=hotel&id=".$res['data']."'</script>";
 												} else {
 													echo $res['error_msg'];
 												}

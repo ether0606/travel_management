@@ -40,14 +40,13 @@
 					<p></p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
-									
-											<div class="about-btn">
-												<button type="button" onclick="show_form(<?= $d->id ?>)" class="about-view packages-btn">book now</button>
-											</div><!--/.about-btn-->
-										</div><!--/.single-package-item-txt-->
-									</div><!--/.single-package-item-->
+					<div class="about-btn">
+						<button type="button" onclick="show_form(<?= $d->id ?>)" class="about-view packages-btn">book now</button>
+					</div><!--/.about-btn-->
+				</div><!--/.single-package-item-txt-->
+			</div><!--/.single-package-item-->
 
-								</div><!--/.col-->
+		</div><!--/.col-->
 								<div class="col-sm-6">
 									<div class="booking-form booking-form<?= $d->id ?>">
 										<form method="post" action="">
@@ -140,20 +139,18 @@
 												$bookings['created_at'] = date('Y-m-d H:i:s');
 												$bookings['created_by'] = $user_id;
 
-												$res = $mysqli->common_insert('tour_package_booking', $bookings);
-												if (!$res['error']) {
-													echo "<script>location.href='thanks.php?id=".$res['data']."'</script>";
+												$resb = $mysqli->common_insert('tour_package_booking', $bookings);
+												if (!$resb['error']) {
+													echo "<script>location.href='thanks.php?b=tour&id=".$resb['data']."'</script>";
 												} else {
-													echo $res['error_msg'];
+													echo $resb['error_msg'];
 												}
 											}
 										?>
 									</div>
 								</div>
 							</div><!--/.row-->
-						<?php }}else{?>  
-
-						<?php } ?>  
+						
 						
 
 						

@@ -103,10 +103,10 @@
 
 <?php
     $booking_id = $_GET['id'];
-    $res=$mysqli->common_query("SELECT hotel_bookings.*,user.full_name,user.contact,user.address, hotels.name as hotel_name, hotel_room.room_type,hotel_room.price_per_night FROM `hotel_bookings` 
-                                JOIN user on user.id=hotel_bookings.user_id
-                                JOIN hotels on hotels.id=hotel_bookings.hotel_id
-                                JOIN hotel_room on hotel_room.id=hotel_bookings.room_id where hotel_bookings.id='".$booking_id."'");
+    $res=$mysqli->common_query("SELECT tour_package_booking.*,user.full_name,user.contact,user.address, tour_packages.title FROM `tour_package_booking` 
+                                JOIN user on user.id=tour_package_booking.user_id
+                                JOIN tour_packages on tour_packages.id=tour_package_booking.tour_id
+                                where tour_package_booking.id='".$booking_id."'");
 
     $data=$res['data'][0];
 ?>
@@ -148,9 +148,9 @@
                     <th >Total</th>
             </tr>
             <tr>
-                <td >Package</td>
-                <td > <?= $data->number_of_room ?></td>
-                <td> <?= $data->price_per_night ?></td>
+                <td ><?= $data->title ?></td>
+                <td > <?= $data->qty ?></td>
+                <td> <?= $data->total_amount / $data->qty ?></td>
                 <td> <?= $data->total_amount ?></td>
             </tr>
            

@@ -108,6 +108,8 @@
                                 JOIN hotels on hotels.id=hotel_bookings.hotel_id
                                 JOIN hotel_room on hotel_room.id=hotel_bookings.room_id where hotel_bookings.id='".$booking_id."'");
 
+
+
     $data=$res['data'][0];
 ?>
     <h1 text align="center">Invoice</h1>
