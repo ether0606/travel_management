@@ -148,12 +148,19 @@
                     <th >Total</th>
             </tr>
             <tr>
-                <td >Room Accomodation</td>
+                <td >Flight Fare</td>
                 <td > <?= $data->number_of_room ?></td>
                 <td> <?= $data->price_per_night ?></td>
                 <td> <?= $data->total_amount ?></td>
             </tr>
            
+            <tr>
+                <td >Service fee</td>
+                <td > <?= $data->number_of_room ?></td>
+                <td> <?= $data->price_per_night ?></td>
+                <td> <?= $data->total_amount ?></td>
+            </tr>
+
             <tr>
                 <th colspan="3">Subtotal</th>
                  <td><?= $data->total_amount ?></td>
