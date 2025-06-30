@@ -38,18 +38,15 @@
                         </tr>
                       </thead>
                       <tbody> 
-                        
-   
-                      
- <?php
-                        $res = $mysqli->common_select('schedule');
+                      <?php
+                        $res = $mysqli->common_query('SELECT schedule.*,route.route_type,airline.name FROM `schedule` JOIN route on route.id=schedule.route_id JOIN airline on airline.id=schedule.airline_id where schedule.status=1');
                         if (!$res['error']) {
                               foreach ($res['data'] as $i => $d) {
                         ?>
                           <tr>
                             <td><?= ++$i;?></td>
-                            <td><?= $d->route_id ?></td>
-                            <td><?= $d->airline_id ?></td>
+                            <td><?= $d->route_type ?></td>
+                            <td><?= $d->name ?></td>
                             <td><?= $d->start_time_date?></td>
                             <td><?= $d->end_time_date ?></td>
                             

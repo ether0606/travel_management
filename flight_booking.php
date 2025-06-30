@@ -22,185 +22,43 @@
 			</div><!--/.container-->
 
 		</section><!--/.about-us-->
-		<!--about-us end --> 
-<div role="tabpanel" class="tab-pane fade in" id="flights">
-									<div class="tab-para">
-										<div class="trip-circle">
-											<div class="single-trip-circle">
-												<input type="radio" id="radio01" name="radio" />
-												<label for="radio01">
-													<span class="round-boarder">
-														<span class="round-boarder1"></span>
-													</span>round trip
-												</label>
-											</div><!--/.single-trip-circle-->
-											<div class="single-trip-circle">
-												<input type="radio" id="radio02" name="radio" />
-												<label for="radio02">
-													<span class="round-boarder">
-														<span class="round-boarder1"></span>
-													</span>on way
-												</label>
-											</div><!--/.single-trip-circle-->
-										</div><!--/.trip-circle-->
-										<div class="row">
-											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="single-tab-select-box">
+		<!--packages start-->
+		<section id="pack" class="packages">
+			<div class="container">
+				<div class="gallary-header text-center">
+					<h2>places to stay</h2>
+					<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  </p>
+				</div><!--/.gallery-header-->
+				<div class="packages-content">
+					<div class="row">
+						<?php
+							$res = $mysqli->common_query("SELECT airline.*,schedule.route_id,schedule.id as schedule_id FROM `schedule` JOIN route on route.id=schedule.route_id JOIN airline on airline.id=schedule.airline_id where route.from_airport='".$_GET['from_airport']."' and route.to_airport='".$_GET['to_airport']."' and date(schedule.start_time_date) = '".date('Y-m-d',strtotime($_GET['departure_date']))."' and schedule.status=1;");
+							
+							if ($res['error'] == 0) {
+								foreach($res['data'] as $d){
+						?>
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="<?= $baseurl ?>admin/assets/images/hotels/<?= $d->image_url ?>" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3><?= $d->name ?> </h3>
+									<div class="packages-para">
+										<p><?= $d->contact ?></p>
+									</div><!--/.packages-para-->
+									<div class="about-btn">
+										<a href="flight_book_now.php?schedule_id=<?= $d->id ?>&airline_id=<?= $d->id ?>&route_id=<?= $d->route_id ?>&departure_date=<?= $_GET['departure_date'] ?>&return_date=<?= $_GET['return_date'] ?>" class="about-view packages-btn">book now</a>
+									</div><!--/.about-btn-->
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
 
-													<h2>from</h2>
+						</div><!--/.col-->
+						<?php }}else{?>  
+								<h3>No Airline found </h3>
+						<?php } ?>  
+					</div><!--/.row-->
+				</div><!--/.packages-content-->
+			</div><!--/.container-->
 
-													<div class="travel-select-icon">
-														<select class="form-control ">
-
-															<option value="default">enter your destination</option><!-- /.option-->
-															<?php
-															$destinations=$mysqli->common_select("destination","id,name");
-
-															
-															foreach($destinations['data']as $destination) : ?>
-															<option value="<?=$destination->id ?>"><?=$destination->name ?></option>
-															<?php endforeach; ?>
-
-															
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-
-											<div class="col-lg-2 col-md-3 col-sm-4">
-												<div class="single-tab-select-box">
-													<h2>departure</h2>
-													<div class="travel-check-icon">
-														<form action="#">
-															<input type="text" name="departure" class="form-control" data-toggle="datepicker"
-															placeholder="12 -01 - 2017 ">
-														</form>
-													</div><!-- /.travel-check-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-
-											<div class="col-lg-2 col-md-3 col-sm-4">
-												<div class="single-tab-select-box">
-													<h2>return</h2>
-													<div class="travel-check-icon">
-														<form action="#">
-															<input type="text" name="return" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
-														</form>
-													</div><!-- /.travel-check-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-
-											<div class="col-lg-2 col-md-1 col-sm-4">
-												<div class="single-tab-select-box">
-													<h2>Members</h2>
-													<div class="travel-select-icon">
-														<select class="form-control ">
-
-															<option value="default">5</option><!-- /.option-->
-
-															<option value="10">10</option><!-- /.option-->
-
-															<option value="15">15</option><!-- /.option-->
-															<option value="20">20</option><!-- /.option-->
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-
-											
-										</div><!--/.row-->
-
-										<div class="row">
-											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="single-tab-select-box">
-
-													<h2>to</h2>
-
-													<div class="travel-select-icon">
-														<select class="form-control ">
-
-															<option value="default">enter your destination</option><!-- /.option-->
-															<?php
-															$destinations=$mysqli->common_select("destination","id,name");
-
-															
-															foreach($destinations['data']as $destination) : ?>
-															<option value="<?=$destination->id ?>"><?=$destination->name ?></option>
-															<?php endforeach; ?>
-
-															
-
-									
-
-															
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-
-											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="single-tab-select-box">
-
-													<h2>Airlines</h2>
-
-													<div class="travel-select-icon">
-														<select class="form-control ">
-
-															<option value="default">select airlines</option><!-- /.option-->
-																
-															<?php
-															$airlines=$mysqli->common_select("airline","id,name");
-
-															
-															foreach($airlines['data']as $airline) : ?>
-															<option value="<?=$airline->id ?>"><?=$airline->name ?></option>
-															<?php endforeach; ?>
-
-									
-
-															
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-											<div class="col-lg-3 col-md-3 col-sm-4">
-												<div class="single-tab-select-box">
-
-													<h2>class</h2>
-													<div class="travel-select-icon">
-														<select class="form-control ">
-
-															<option value="default">enter class</option><!-- /.option-->
-
-															<?php
-															$seats=$mysqli->common_select("seat","id,seat_type");
-
-															
-															foreach($seats['data']as $seat) : ?>
-															<option value="<?=$seat->id ?>"><?=$seat->seat_type ?></option>
-															<?php endforeach; ?>
-
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-											<div class="clo-sm-5">
-												<div class="about-btn pull-right">
-													<button  class="about-view travel-btn">
-														search	
-													</button><!--/.travel-btn-->
-												</div><!--/.about-btn-->
-											</div><!--/.col-->
-											
-										</div><!--/.row-->
-
-									</div>
-
-								</div><!--/.tabpannel-->
+		</section><!--/.packages-->
+		<!--packages end-->
 <?php include_once('includes/footer.php'); ?>

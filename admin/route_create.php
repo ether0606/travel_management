@@ -15,13 +15,7 @@
                               <div class="x_content">
                                     <br />
                                     <form method="post" action="" class="form-horizontal form-label-left">
-                                          <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="">ID <span class="required">*</span>
-                                                </label>
-                                                <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="" name="" required="required" class="form-control ">
-                                                </div>
-                                          </div>
+                                          
                                           <div class="item form-group">
                                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="route_type">Route type <span class="required">*</span>
                                                 </label>
@@ -64,9 +58,9 @@
                               
                                          
                                     <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="trans_area">Trans_area <span class="required">*</span></label>
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="trans_area">Trans_area </label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                <select id="trans_area" name="trans_area" required="required" class="form-control">
+                                                <select id="trans_area" name="trans_area" class="form-control">
                                                 <option value="">Select airport</option>
                                                 <?php 
                                                       $airports = $mysqli->common_select("airport", "id, name");

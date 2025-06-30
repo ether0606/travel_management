@@ -40,12 +40,7 @@
 
                     <tbody>
                        <?php
-                     $res = $mysqli->common_query('select route.*, airport.name as from_airport,airport.name as to_airport,airport.name as trans_area
-                      from 
-                        route
-                      join airport as airport_name on route.airport_id = airport.id 
-                    
-                      where route.status = 1 order by route.id desc');
+                     $res = $mysqli->common_query('SELECT route.*, (select name from airport WHERE airport.id=route.from_airport) as from_name, (select name from airport WHERE airport.id=route.to_airport) as to_name, (select name from airport WHERE airport.id=route.trans_area) as trans_name FROM `route` WHERE `status`=1');
                       if (!$res['error']) {
                        foreach ($res['data'] as $i => $d) {
                         ?>
@@ -53,10 +48,9 @@
                               <tr>
                                 <td><?= ++$i; ?></td>
                                 <td><?= $d->route_type ?></td>
-                                <td><?= $d->from_airport ?></td>
-                                <td><?= $d->to_airport ?></td>
-                                <td><?= $d->trans_area ?></td>
-      
+                                <td><?= $d->from_name ?></td>
+                                <td><?= $d->to_name ?></td>
+                                <td><?= $d->trans_name ?></td>
                                 <td><?= $d->status ? "Active" : "Inactive" ?></td>
                                 <td>
                                   <a href="route_edit.php?id=<?= $d->id ?>" class="btn btn-primary btn-sm">Edit</a>

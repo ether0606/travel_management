@@ -100,140 +100,139 @@
 								</div><!--/.tabpannel-->
 
 								<div role="tabpanel" class="tab-pane fade in" id="flights">
-									<div class="tab-para">
-										<div class="trip-circle">
-											<div class="single-trip-circle">
-												<input type="radio" id="radio01" name="radio" />
-												<label for="radio01">
-													<span class="round-boarder">
-														<span class="round-boarder1"></span>
-													</span>round trip
-												</label>
-											</div><!--/.single-trip-circle-->
-											<div class="single-trip-circle">
-												<input type="radio" id="radio02" name="radio" />
-												<label for="radio02">
-													<span class="round-boarder">
-														<span class="round-boarder1"></span>
-													</span>on way
-												</label>
-											</div><!--/.single-trip-circle-->
-										</div><!--/.trip-circle-->
-										<div class="row">
-											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="single-tab-select-box">
+									<form method="get" action="flight_booking.php">
+										<div class="tab-para">
+											<div class="trip-circle">
+												<div class="single-trip-circle">
+													<input type="radio" value="round_trip" class="way" id="radio01" name="trip_way" />
+													<label for="radio01">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>round trip
+													</label>
+												</div><!--/.single-trip-circle-->
+												<div class="single-trip-circle">
+													<input type="radio" value="one_way" class="way" id="radio02" name="trip_way" />
+													<label for="radio02">
+														<span class="round-boarder">
+															<span class="round-boarder1"></span>
+														</span>on way
+													</label>
+												</div><!--/.single-trip-circle-->
+											</div><!--/.trip-circle-->
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-12">
+													<div class="single-tab-select-box">
 
-													<h2>from</h2>
+														<h2>from</h2>
 
-													<div class="travel-select-icon">
-														<select class="form-control ">
+														<div class="travel-select-icon">
+															<select class="form-control " name="from_airport">
 
-															<option value="default">enter your location</option><!-- /.option-->
+																<option value="default">enter your location</option><!-- /.option-->
 
-															<option value="turkey">turkey</option><!-- /.option-->
+																<?php 
+																	$locations = $mysqli->common_select("airport", "id, name");
+																	foreach ($locations['data'] as $location) : ?>
+																		<option value="<?= $location->id ?>"><?= $location->name ?></option>
+																<?php endforeach; ?>
 
-															<option value="russia">russia</option><!-- /.option-->
-															<option value="egept">egypt</option><!-- /.option-->
+															</select><!-- /.select-->
+														</div><!-- /.travel-select-icon -->
+													</div><!--/.single-tab-select-box-->
+												</div><!--/.col-->
 
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
+												<div class="col-lg-2 col-md-3 col-sm-4">
+													<div class="single-tab-select-box">
+														<h2>departure</h2>
+														<div class="travel-check-icon">
+															<input type="text" name="departure_date" class="form-control" data-toggle="datepicker"
+																placeholder="12 -01 - 2017 ">
+														</div><!-- /.travel-check-icon -->
+													</div><!--/.single-tab-select-box-->
+												</div><!--/.col-->
 
-											<div class="col-lg-2 col-md-3 col-sm-4">
-												<div class="single-tab-select-box">
-													<h2>departure</h2>
-													<div class="travel-check-icon">
-														<form action="#">
-															<input type="text" name="departure" class="form-control" data-toggle="datepicker"
-															placeholder="12 -01 - 2017 ">
-														</form>
-													</div><!-- /.travel-check-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
+												<div class="col-lg-2 col-md-3 col-sm-4 return_date">
+													<div class="single-tab-select-box">
+														<h2>return</h2>
+														<div class="travel-check-icon">
+															<input type="text" name="return_date" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
+														</div><!-- /.travel-check-icon -->
+													</div><!--/.single-tab-select-box-->
+												</div><!--/.col-->
 
-											<div class="col-lg-2 col-md-3 col-sm-4">
-												<div class="single-tab-select-box">
-													<h2>return</h2>
-													<div class="travel-check-icon">
-														<form action="#">
-															<input type="text" name="return" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
-														</form>
-													</div><!-- /.travel-check-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
+												<div class="col-lg-2 col-md-1 col-sm-4">
+													<div class="single-tab-select-box">
+														<h2>traveller</h2>
+														<div class="travel-select-icon">
+															<select class="form-control " name="qty">
 
-											<div class="col-lg-2 col-md-1 col-sm-4">
-												<div class="single-tab-select-box">
-													<h2>traveller</h2>
-													<div class="travel-select-icon">
-														<select class="form-control ">
+																<option value="default">5</option><!-- /.option-->
 
-															<option value="default">5</option><!-- /.option-->
+																<option value="10">10</option><!-- /.option-->
 
-															<option value="10">10</option><!-- /.option-->
+																<option value="15">15</option><!-- /.option-->
+																<option value="20">20</option><!-- /.option-->
 
-															<option value="15">15</option><!-- /.option-->
-															<option value="20">20</option><!-- /.option-->
+															</select><!-- /.select-->
+														</div><!-- /.travel-select-icon -->
+													</div><!--/.single-tab-select-box-->
+												</div><!--/.col-->
 
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
+											</div><!--/.row-->
 
-										</div><!--/.row-->
+											<div class="row">
+												<div class="col-lg-4 col-md-4 col-sm-12">
+													<div class="single-tab-select-box">
 
-										<div class="row">
-											<div class="col-lg-4 col-md-4 col-sm-12">
-												<div class="single-tab-select-box">
+														<h2>to</h2>
 
-													<h2>to</h2>
+														<div class="travel-select-icon">
+															<select class="form-control" name="to_airport">
 
-													<div class="travel-select-icon">
-														<select class="form-control ">
+																<option value="default">enter your destination location</option><!-- /.option-->
 
-															<option value="default">enter your destination location</option><!-- /.option-->
+																<?php 
+																	$locations = $mysqli->common_select("airport", "id, name");
+																	foreach ($locations['data'] as $location) : ?>
+																		<option value="<?= $location->id ?>"><?= $location->name ?></option>
+																<?php endforeach; ?>
 
-															<option value="istambul">istambul</option><!-- /.option-->
+															</select><!-- /.select-->
+														</div><!-- /.travel-select-icon -->
 
-															<option value="mosko">mosko</option><!-- /.option-->
-															<option value="cairo">cairo</option><!-- /.option-->
+													</div><!--/.single-tab-select-box-->
+												</div><!--/.col-->
+												<div class="col-lg-3 col-md-3 col-sm-4">
+													<div class="single-tab-select-box">
 
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
+														<h2>class</h2>
+														<div class="travel-select-icon">
+															<select class="form-control " name="class_name">
 
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-											<div class="col-lg-3 col-md-3 col-sm-4">
-												<div class="single-tab-select-box">
+																<option value="default">enter class</option><!-- /.option-->
 
-													<h2>class</h2>
-													<div class="travel-select-icon">
-														<select class="form-control ">
+																<?php 
+																	$locations = $mysqli->common_query("SELECT DISTINCT(`class_name`) as class_name FROM `seat_fare` WHERE `status`=1;");
+																	foreach ($locations['data'] as $location) : ?>
+																		<option value="<?= $location->class_name ?>"><?= $location->class_name ?></option>
+																<?php endforeach; ?>
+															</select><!-- /.select-->
+														</div><!-- /.travel-select-icon -->
+													</div><!--/.single-tab-select-box-->
+												</div><!--/.col-->
+												<div class="clo-sm-5">
+													<div class="about-btn pull-right">
+														<button  class="about-view travel-btn">
+															search	
+														</button><!--/.travel-btn-->
+													</div><!--/.about-btn-->
+												</div><!--/.col-->
+												
+											</div><!--/.row-->
 
-															<option value="default">enter class</option><!-- /.option-->
-
-															<option value="A">A</option><!-- /.option-->
-
-															<option value="B">B</option><!-- /.option-->
-															<option value="C">C</option><!-- /.option-->
-
-														</select><!-- /.select-->
-													</div><!-- /.travel-select-icon -->
-												</div><!--/.single-tab-select-box-->
-											</div><!--/.col-->
-											<div class="clo-sm-5">
-												<div class="about-btn pull-right">
-													<button  class="about-view travel-btn">
-														search	
-													</button><!--/.travel-btn-->
-												</div><!--/.about-btn-->
-											</div><!--/.col-->
-											
-										</div><!--/.row-->
-
-									</div>
-
+										</div>
+									</form>
 								</div><!--/.tabpannel-->
 
 							</div><!--/.tab content-->
@@ -676,3 +675,13 @@
 
 
 <?php include_once('includes/footer.php'); ?>
+
+<script>
+	$('.way').change(function(){
+		if($(this).val() == 'one_way'){
+			$('.return_date').hide(500);
+		}else{
+			$('.return_date').show(500);
+		}
+	});
+</script>
