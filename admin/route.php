@@ -44,8 +44,7 @@
                       from 
                         route
                       join airport as airport_name on route.airport_id = airport.id 
-                      join airport as airport_name on route.airport_id = airport.id 
-                      join airport as airport_name on route.airport_id = airport.id 
+                    
                       where route.status = 1 order by route.id desc');
                       if (!$res['error']) {
                        foreach ($res['data'] as $i => $d) {
