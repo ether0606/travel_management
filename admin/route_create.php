@@ -30,35 +30,51 @@
                                                 </div>
                                           </div>
 
-<div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="to_airport">To Airport<span class="required">*</span>
-                                                </label>
-                                                <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="to_airport" name="to_airport" required="required" class="form-control">
-                                                </div>
-                                          </div>
-
-
-  <div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="from_airport">From Airport <span class="required">*</span>
-                                                </label>
-                                                <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="from_airport" name="from_airport" required="required" class="form-control">
-                                                </div>
-                                          </div>   
+                                         
                                           
-                                          
-
-
-                                                                        
-
-<div class="item form-group">
-                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="trans_area">Trans Area<span class="required">*</span>
-                                                </label>
+                                                
+                                          <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination_id">To Airport <span class="required">*</span></label>
                                                 <div class="col-md-6 col-sm-6 ">
-                                                      <input type="text" id="trans_area" name="trans_area" required="required" class="form-control">
-                                                </div>
-                                          </div>
+                                                <select id="destination_id" name="destination_id" required="required" class="form-control">
+                                                <option value="">Select airport</option>
+                                                <?php 
+                                                      $airports = $mysqli->common_select("airport", "id, name");
+                                                      foreach ($airports['data'] as $airport) : ?>
+                                                            <option value="<?= $airport->id ?>"><?= $airport->name ?></option>
+                                                <?php endforeach; ?>
+
+                                          </select>
+                                    </div>
+                                    <br>
+                                          <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination_id">From Airport <span class="required">*</span></label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                <select id="destination_id" name="destination_id" required="required" class="form-control">
+                                                <option value="">Select airport</option>
+                                                <?php 
+                                                      $airports = $mysqli->common_select("airport", "id, name");
+                                                      foreach ($airports['data'] as $airport) : ?>
+                                                            <option value="<?= $airport->id ?>"><?= $airport->name ?></option>
+                                                <?php endforeach; ?>
+
+                                          </select>
+                                    </div>
+                                    <div class="item form-group">
+                                                <label class="col-form-label col-md-3 col-sm-3 label-align" for="destination_id">Transarea <span class="required">*</span></label>
+                                                <div class="col-md-6 col-sm-6 ">
+                                                <select id="destination_id" name="destination_id" required="required" class="form-control">
+                                                <option value="">Select airport</option>
+                                                <?php 
+                                                      $airports = $mysqli->common_select("airport", "id, name");
+                                                      foreach ($airports['data'] as $airport) : ?>
+                                                            <option value="<?= $airport->id ?>"><?= $airport->name ?></option>
+                                                <?php endforeach; ?>
+
+                                          </select>
+                                    </div>
+
+
 
 
                                          
