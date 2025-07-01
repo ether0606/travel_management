@@ -610,4 +610,3 @@
 	</section><!--/.special-offer end-->
 	<!--special-offer end-->
 <?php include_once('includes/footer.php'); ?>
-

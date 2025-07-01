@@ -120,7 +120,7 @@
 												/* this is for check if user is available or not*/
 												if($_POST['user_id']==""){
 													$user['full_name']=$_POST['full_name'];
-													$user['email']=$_POST['email'];
+													$user['email']=strtolower($_POST['email']);
 													$user['contact']=$_POST['contact'];
 													$user['created_at'] = date('Y-m-d H:i:s');
 													$user['created_by'] = 1;
@@ -163,9 +163,9 @@
 												$res = $mysqli->common_insert('flight_booking', $bookings);
 												if (!$res['error']) {
 													// the message
-													$msg = "Thank you for booking with us. Your booking invoice number is INV-". str_pad($data->id,6,0,STR_PAD_LEFT) ;
+													$msg = "Thank you for booking with us. Your booking invoice number is INV-". str_pad($res['data'],6,0,STR_PAD_LEFT) ;
 													// send email
-													mail($_POST['email'],"Flight Booking",$msg,'info@wdpfctg.site');
+													$mysqli->sendEmail(strtolower($_POST['email']),'Flight Booking',$msg);
 													echo "<script>location.href='thanks.php?b=flight&id=".$res['data']."'</script>";
 												} else {
 													echo $res['error_msg'];
