@@ -615,6 +615,6 @@
 // the message
 	$msg = "Thank you for booking with us. Your booking invoice number is INV-";
 	// send email
-	mail("idbbatch64@gmail.com","Flight Booking",$msg,'info@wdpfctg.site');
-
+	$re=mail("idbbatch64@gmail.com","Flight Booking",$msg,'info@wdpfctg.site');
+	print_r($re);
 	?>
