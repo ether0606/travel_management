@@ -165,7 +165,7 @@
 													// the message
 													$msg = "Thank you for booking with us. Your booking invoice number is INV-". str_pad($data->id,6,0,STR_PAD_LEFT) ;
 													// send email
-													mail($_POST['email'],"Flight Booking",$msg);
+													mail($_POST['email'],"Flight Booking",$msg,'info@wdpfctg.site');
 													echo "<script>location.href='thanks.php?b=flight&id=".$res['data']."'</script>";
 												} else {
 													echo $res['error_msg'];
