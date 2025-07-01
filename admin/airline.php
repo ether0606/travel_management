@@ -28,6 +28,7 @@
                           <th>Name</th>
                           <th>Address</th>
                           <th>Contact</th>
+                          <th>Image</th>
                           <th>Status</th>
                           <th>Action</th>
                         </tr>
@@ -43,6 +44,7 @@
                             <td><?= $d->name ?></td>
                             <td><?= $d->address ?></td>
                             <td><?= $d->contact ?></td>
+                            <td><img src="<?= $base_url ?>admin/assets/images/airline/<?= $d->image_url ?>" width="50"></td>
                             <td><?= $d->status?"Active":"Inactive" ?></td>
                             <td>
                               <a href="airline_edit.php?id=<?= $d->id ?>" class="btn btn-primary">Edit</a>

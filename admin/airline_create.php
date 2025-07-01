@@ -32,7 +32,13 @@
                                                       <input id="address" class="form-control" type="text" name="address">
                                                 </div>
                                           </div>
-                                          
+                                          <div class="form-group row">
+                                                <label class="col-md-3 col-form-label">Image URL</label>
+                                                <div class="col-md-6 col-sm-6 " >
+                                                      <input type="file" name="image_url" class="form-control">
+                                                </div>
+                                          </div>
+                                                                                    
                                           
                                           <div class="ln_solid"></div>
                                           <div class="item form-group">
@@ -42,8 +48,11 @@
                                           </div>
                                     </form>
                                     <?php
-
-                                          if ($_POST) {
+                                    if ($_POST) {
+                                                if($_FILES['image_url']['name']) {
+                                                      $image_url = $mysqli->upload_file($_FILES['image_url'], 'airline');
+                                                      $_POST['image_url'] = $image_url['file_name'];
+                                                }
                                                 $_POST['created_at'] = date('Y-m-d H:i:s');
                                                 $_POST['created_by'] = $_SESSION['user']->id;
                                                 $_POST['status'] = 1;
