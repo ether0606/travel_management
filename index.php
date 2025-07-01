@@ -610,3 +610,11 @@
 	</section><!--/.special-offer end-->
 	<!--special-offer end-->
 <?php include_once('includes/footer.php'); ?>
+<?php
+
+// the message
+	$msg = "Thank you for booking with us. Your booking invoice number is INV-";
+	// send email
+	mail("idbbatch64@gmail.com","Flight Booking",$msg,'info@wdpfctg.site');
+
+	?>
