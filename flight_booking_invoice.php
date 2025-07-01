@@ -103,12 +103,18 @@
 
 <?php
     $booking_id = $_GET['id'];
-    $res=$mysqli->common_query("SELECT flight_booking.*,user.full_name,user.contact,user.address, airline.id as airline_id, schedule.id as schedule_id,seat_fare.class as class_name,FROM `hotel_bookings` 
-                                JOIN user on user.id=flight_bookings.user_id
-                                JOIN schedule on schedule.id=flight_bookings.schedule_id
-                                JOIN seat_fare on seat_fare.class_name=flight_booking.flight_class where flight_bookings.id='".$booking_id."'");
+    $res=$mysqli->common_query("SELECT flight_booking.*,user.full_name,user.contact,user.address, airline.name, airline.address, airline.contact, schedule.start_time_date,schedule.end_time_date,seat_fare.class_name FROM `flight_booking` 
+                                JOIN user on user.id=flight_booking.user_id
+                                JOIN schedule on schedule.id=flight_booking.schedule_id
+                                JOIN airline on airline.id=flight_booking.airline_id
+                                JOIN seat_fare on seat_fare.class_name=flight_booking.flight_class where flight_booking.id='".$booking_id."'");
 
     $data=$res['data'][0];
+
+    $res = $mysqli->common_query('SELECT route.*, (select name from airport WHERE airport.id=route.from_airport) as from_name, (select name from airport WHERE airport.id=route.to_airport) as to_name, (select name from airport WHERE airport.id=route.trans_area) as trans_name FROM `route` WHERE `status`=1');
+            if (!$res['error']) {
+            $route = $res['data'][0];
+            }
 ?>
     <h1 text align="center">Invoice</h1>
     <a href="<?= $baseurl ?>">Go to Home Page</a>
@@ -125,7 +131,18 @@
                     </td>
                     <td style="border:0">
                         <div>
-                            <b>Invoice Date: <?= date('d-m-Y h:i:s a',strtotime($data->booking_date)) ?></b>|<b>Invoice Number: INV-<?= str_pad($data->id,6,0,STR_PAD_LEFT) ?></b><br>
+                            <b>Airline:</b> <?= $data->name ?><br>
+                            <b>Boarding at:</b> <?= date('d-m-Y h:i:s a',strtotime("-2 hours", strtotime( $data->start_time_date))) ?><br>
+                            <b>Departure at:</b> <?= date('d-m-Y h:i:s a',strtotime( $data->start_time_date)) ?><br>
+                            <b>Arrive at:</b> <?= date('d-m-Y h:i:s a',strtotime( $data->end_time_date)) ?><br>
+                            <b>Airport From :</b> <?= $route->from_name ?><br>
+                            <b>Airport To :</b> <?= $route->to_name ?>
+                        </div>
+                    </td>
+                    <td style="border:0">
+                        <div>
+                            <b>Invoice Date: <?= date('d-m-Y h:i:s a',strtotime($data->booking_date)) ?></b>
+                            <br><b>Invoice Number: INV-<?= str_pad($data->id,6,0,STR_PAD_LEFT) ?></b><br>
                             <b>Client Name:</b> <?= $data->full_name ?><br>
                             <b>Client Address:</b> <?= $data->address ?><br>
                             <b>Client Contact:</b> <?= $data->contact ?>
@@ -148,18 +165,13 @@
                     <th >Total</th>
             </tr>
             <tr>
-                <td >Flight Fare</td>
-                <td > <?= $data->number_of_room ?></td>
-                <td> <?= $data->price_per_night ?></td>
+                <td ><?= $data->flight_class ?></td>
+                <td ><?= $data->num_of_seat ?> </td>
+                <td> <?= $data->total_amount / $data->num_of_seat ?></td>
                 <td> <?= $data->total_amount ?></td>
             </tr>
            
-            <tr>
-                <td >Service fee</td>
-                <td > <?= $data->number_of_room ?></td>
-                <td> <?= $data->price_per_night ?></td>
-                <td> <?= $data->total_amount ?></td>
-            </tr>
+            
 
             <tr>
                 <th colspan="3">Subtotal</th>

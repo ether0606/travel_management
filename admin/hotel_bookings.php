@@ -35,14 +35,17 @@
               <tbody>
                 <?php
                 $status=['','Pending','Approved','Cancel','Complete'];
-                $res = $mysqli->common_select('hotel_bookings');
+                $res=$mysqli->common_query("SELECT hotel_bookings.*,user.full_name,user.contact,user.address, hotels.name as hotel_name, hotel_room.room_type,hotel_room.price_per_night FROM `hotel_bookings` 
+                                JOIN user on user.id=hotel_bookings.user_id
+                                JOIN hotels on hotels.id=hotel_bookings.hotel_id
+                                JOIN hotel_room on hotel_room.id=hotel_bookings.room_id where hotel_bookings.status=1");
                 if (!$res['error']) {
                   foreach ($res['data'] as $i => $d) {
                 ?>
                 <tr>
                   <td><?= ++$i;?></td>
-                  <td><?= $d->user_id ?></td>
-                  <td><?= $d->hotel_id ?></td>
+                  <td><?= $d->full_name ?> (<?= $d->contact ?>) </td>
+                  <td><?= $d->hotel_name ?></td>
                   <td><?= $d->check_in_date ?></td>
                   <td><?= $d->check_out_date ?></td>
                   <td><?= $d->number_of_room ?></td>

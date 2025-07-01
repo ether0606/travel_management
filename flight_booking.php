@@ -46,7 +46,7 @@
 										<p><?= $d->contact ?></p>
 									</div><!--/.packages-para-->
 									<div class="about-btn">
-										<a href="flight_book_now.php?schedule_id=<?= $d->id ?>&airline_id=<?= $d->id ?>&route_id=<?= $d->route_id ?>&departure_date=<?= $_GET['departure_date'] ?>&return_date=<?= $_GET['return_date'] ?>" class="about-view packages-btn">book now</a>
+										<a href="flight_book_now.php?schedule_id=<?= $d->schedule_id ?>&airline_id=<?= $d->id ?>&route_id=<?= $d->route_id ?>&departure_date=<?= $_GET['departure_date'] ?>" class="about-view packages-btn">book now</a>
 									</div><!--/.about-btn-->
 								</div><!--/.single-package-item-txt-->
 							</div><!--/.single-package-item-->

@@ -91,30 +91,12 @@
 														</div><!-- /.travel-check-icon -->
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
-												
-												<div class="col-12">
-													<div class="single-tab-select-box">
-														<h2>check in</h2>
-														<div class="travel-check-icon">
-															<input type="text" name="check_in_date" class="form-control" data-toggle="datepicker">
-														</div><!-- /.travel-check-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
 
 												<div class="col-12">
 													<div class="single-tab-select-box">
-														<h2>check out</h2>
-														<div class="travel-check-icon">
-															<input type="text" name="check_out_date" class="form-control"  data-toggle="datepicker">
-														</div><!-- /.travel-check-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-												<div class="col-12">
-													<div class="single-tab-select-box">
-														<h2>Number of Room</h2>
+														<h2>Number of Seat</h2>
 														<div class="travel-text-icon">
-															<input type="text" name="number_of_room" class="form-control" >
+															<input type="text" name="num_of_seat" class="form-control" >
 														</div><!-- /.travel-text-icon -->
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
@@ -133,6 +115,7 @@
 
 										</form>
 										<?php
+										
 											if (isset($_POST["submit{$d->id}"])) {
 												/* this is for check if user is available or not*/
 												if($_POST['user_id']==""){
@@ -162,27 +145,28 @@
 												}
 												
 												$bookings['user_id']=$user_id;
-												$bookings['hotel_id']=$_GET['hotel_id'];
-												$bookings['check_in_date']=date('Y-m-d',strtotime($_POST['check_in_date']));
-												$bookings['check_out_date']=date('Y-m-d',strtotime($_POST['check_out_date']));
-												$bookings['number_of_room']=$_POST['number_of_room'];
+												$bookings['airline_id']=$_GET['airline_id'];
+												$bookings['schedule_id']=$_GET['schedule_id'];
+												$bookings['route_id']=$_GET['route_id'];
+												$bookings['departure_date']=date('Y-m-d',strtotime($_GET['departure_date']));
+												$bookings['num_of_seat']=$_POST['num_of_seat'];
+												$bookings['flight_class']=$d->class_name;
 
-												$check_out_date=date_create($bookings['check_out_date']);
-												$check_in_date=date_create($bookings['check_in_date']);
-												$diff=date_diff($check_out_date,$check_in_date);
-												$total_days=$diff->format("%a");
-
-												$bookings['total_amount']=$d->price_per_night * $_POST['number_of_room'] * $total_days;
+												$bookings['total_amount']=$d->seat_fare * $_POST['num_of_seat'];
 												$bookings['booking_date']=date('Y-m-d H:i:s');
-												$bookings['room_id']=$d->id;
+												$bookings['seat_fare_id']=$d->id;
 												$bookings['status']=1;
 												$bookings['booking_status']=1;
 												$bookings['created_at'] = date('Y-m-d H:i:s');
 												$bookings['created_by'] = $user_id;
 
-												$res = $mysqli->common_insert('hotel_bookings', $bookings);
+												$res = $mysqli->common_insert('flight_booking', $bookings);
 												if (!$res['error']) {
-													echo "<script>location.href='thanks.php?b=hotel&id=".$res['data']."'</script>";
+													// the message
+													$msg = "Thank you for booking with us. Your booking invoice number is INV-". str_pad($data->id,6,0,STR_PAD_LEFT) ;
+													// send email
+													mail($_POST['email'],"Flight Booking",$msg);
+													echo "<script>location.href='thanks.php?b=flight&id=".$res['data']."'</script>";
 												} else {
 													echo $res['error_msg'];
 												}
@@ -191,12 +175,7 @@
 									</div>
 								</div>
 							</div><!--/.row-->
-						<?php }}else{?>  
-
-						<?php } ?>  
-						
-
-						
+						<?php }}else{ } ?>  
 
 				</div><!--/.packages-content-->
 			</div><!--/.container-->

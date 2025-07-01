@@ -102,24 +102,7 @@
 								<div role="tabpanel" class="tab-pane fade in" id="flights">
 									<form method="get" action="flight_booking.php">
 										<div class="tab-para">
-											<div class="trip-circle">
-												<div class="single-trip-circle">
-													<input type="radio" value="round_trip" class="way" id="radio01" name="trip_way" />
-													<label for="radio01">
-														<span class="round-boarder">
-															<span class="round-boarder1"></span>
-														</span>round trip
-													</label>
-												</div><!--/.single-trip-circle-->
-												<div class="single-trip-circle">
-													<input type="radio" value="one_way" class="way" id="radio02" name="trip_way" />
-													<label for="radio02">
-														<span class="round-boarder">
-															<span class="round-boarder1"></span>
-														</span>on way
-													</label>
-												</div><!--/.single-trip-circle-->
-											</div><!--/.trip-circle-->
+											
 											<div class="row">
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<div class="single-tab-select-box">
@@ -141,47 +124,6 @@
 														</div><!-- /.travel-select-icon -->
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
-
-												<div class="col-lg-2 col-md-3 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>departure</h2>
-														<div class="travel-check-icon">
-															<input type="text" name="departure_date" class="form-control" data-toggle="datepicker"
-																placeholder="12 -01 - 2017 ">
-														</div><!-- /.travel-check-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-												<div class="col-lg-2 col-md-3 col-sm-4 return_date">
-													<div class="single-tab-select-box">
-														<h2>return</h2>
-														<div class="travel-check-icon">
-															<input type="text" name="return_date" class="form-control" data-toggle="datepicker" placeholder="22 -01 - 2017 ">
-														</div><!-- /.travel-check-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-												<div class="col-lg-2 col-md-1 col-sm-4">
-													<div class="single-tab-select-box">
-														<h2>traveller</h2>
-														<div class="travel-select-icon">
-															<select class="form-control " name="qty">
-
-																<option value="default">5</option><!-- /.option-->
-
-																<option value="10">10</option><!-- /.option-->
-
-																<option value="15">15</option><!-- /.option-->
-																<option value="20">20</option><!-- /.option-->
-
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
-													</div><!--/.single-tab-select-box-->
-												</div><!--/.col-->
-
-											</div><!--/.row-->
-
-											<div class="row">
 												<div class="col-lg-4 col-md-4 col-sm-12">
 													<div class="single-tab-select-box">
 
@@ -203,24 +145,21 @@
 
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
-												<div class="col-lg-3 col-md-3 col-sm-4">
+
+												<div class="col-lg-2 col-md-3 col-sm-4">
 													<div class="single-tab-select-box">
-
-														<h2>class</h2>
-														<div class="travel-select-icon">
-															<select class="form-control " name="class_name">
-
-																<option value="default">enter class</option><!-- /.option-->
-
-																<?php 
-																	$locations = $mysqli->common_query("SELECT DISTINCT(`class_name`) as class_name FROM `seat_fare` WHERE `status`=1;");
-																	foreach ($locations['data'] as $location) : ?>
-																		<option value="<?= $location->class_name ?>"><?= $location->class_name ?></option>
-																<?php endforeach; ?>
-															</select><!-- /.select-->
-														</div><!-- /.travel-select-icon -->
+														<h2>departure</h2>
+														<div class="travel-check-icon">
+															<input type="text" name="departure_date" class="form-control" data-toggle="datepicker"
+																placeholder="12 -01 - 2017 ">
+														</div><!-- /.travel-check-icon -->
 													</div><!--/.single-tab-select-box-->
 												</div><!--/.col-->
+											</div><!--/.row-->
+
+											<div class="row">
+												
+												
 												<div class="clo-sm-5">
 													<div class="about-btn pull-right">
 														<button  class="about-view travel-btn">
@@ -670,18 +609,4 @@
 
 	</section><!--/.special-offer end-->
 	<!--special-offer end-->
-
-	
-
-
 <?php include_once('includes/footer.php'); ?>
-
-<script>
-	$('.way').change(function(){
-		if($(this).val() == 'one_way'){
-			$('.return_date').hide(500);
-		}else{
-			$('.return_date').show(500);
-		}
-	});
-</script>
