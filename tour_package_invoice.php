@@ -154,19 +154,7 @@
                 <td> <?= $data->total_amount ?></td>
             </tr>
 
-            <tr>
-                <td >Airport transfer</td>
-                <td > <?= $data->number_of_room ?></td>
-                <td> <?= $data->price_per_night ?></td>
-                <td> <?= $data->total_amount ?></td>
-            </tr>
-
-            <tr>
-                <td >Services</td>
-                <td > <?= $data->number_of_room ?></td>
-                <td> <?= $data->price_per_night ?></td>
-                <td> <?= $data->total_amount ?></td>
-            </tr>
+            
            
             <tr>
                 <th colspan="3">Subtotal</th>
