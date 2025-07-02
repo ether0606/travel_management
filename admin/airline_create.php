@@ -11,7 +11,7 @@
                               
                               <div class="x_content">
                                     <br />
-                                    <form method="post" action="" class="form-horizontal form-label-left">
+                                    <form method="post" action="" enctype="multipart/form-data"  class="form-horizontal form-label-left">
                                           <div class="item form-group">
                                                 <label class="col-form-label col-md-3 col-sm-3 label-align" for="name">Airline Name <span class="required">*</span>
                                                 </label>

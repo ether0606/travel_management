@@ -36,7 +36,7 @@
 		<section id="pack" class="packages">
 			<div class="container">
 				<div class="gallary-header text-center">
-					<h2>places to stay</h2>
+					<h2>Available Airlines</h2>
 					<p></p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">

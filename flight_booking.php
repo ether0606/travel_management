@@ -1,6 +1,6 @@
 <?php include_once('includes/header.php'); ?>   
 <!--about-us start -->
-		<section id="home" class="about-us" style="background-image: url('<?= $mysqli->base_url ?>admin/assets/images/background/flight-1200.jpg');">
+		<section id="home" class="about-us" style="background-image: url('<?= $mysqli->base_url ?>admin/assets/images/background/premium_photo-1681487902448-c493bb5fc77c.avif');">
 			<div class="container">
 				<div class="about-us-content">
 					<div class="row">
@@ -26,8 +26,8 @@
 		<section id="pack" class="packages">
 			<div class="container">
 				<div class="gallary-header text-center">
-					<h2>places to stay</h2>
-					<p>Duis aute irure dolor in  velit esse cillum dolore eu fugiat nulla.  </p>
+					<h2>Available Airlines</h2>
+					<p>  </p>
 				</div><!--/.gallery-header-->
 				<div class="packages-content">
 					<div class="row">
@@ -39,7 +39,7 @@
 						?>
 						<div class="col-md-4 col-sm-6">
 							<div class="single-package-item">
-								<img src="<?= $baseurl ?>admin/assets/images/hotels/<?= $d->image_url ?>" alt="package-place">
+								<img src="<?= $mysqli->base_url ?>admin/assets/images/airline/<?= $d->image_url ?>" alt="package-place">
 								<div class="single-package-item-txt">
 									<h3><?= $d->name ?> </h3>
 									<div class="packages-para">
