@@ -127,7 +127,6 @@
                         <div>
                             <b>Invoice Date: <?= date('d-m-Y h:i:s a',strtotime($data->booking_date)) ?></b>|<b>Invoice Number: INV-<?= str_pad($data->id,6,0,STR_PAD_LEFT) ?></b><br>
                             <b>Client Name:</b> <?= $data->full_name ?><br>
-                            <b>Client Address:</b> <?= $data->address ?><br>
                             <b>Client Contact:</b> <?= $data->contact ?>
                         </div>
                     </td>
